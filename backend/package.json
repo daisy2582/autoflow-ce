@@ -1,0 +1,25 @@
+{
+  "name": "supago-backend",
+  "version": "1.0.0",
+  "description": "Backend API for Supago Chrome Extension",
+  "main": "server.js",
+  "scripts": {
+    "start": "DB_PORT=5433 node server.js",
+    "dev": "DB_PORT=5433 nodemon server.js",
+    "staging": "NODE_ENV=staging DB_PORT=5433 node server.js",
+    "staging:dev": "NODE_ENV=staging DB_PORT=5433 nodemon server.js",
+    "test": "NODE_ENV=test DB_PORT=5433 node server.js"
+  },
+  "keywords": ["supago", "api", "postgresql"],
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.18.2",
+    "pg": "^8.11.3",
+    "cors": "^2.8.5",
+    "dotenv": "^16.3.1"
+  },
+  "devDependencies": {
+    "nodemon": "^3.0.1"
+  }
+}

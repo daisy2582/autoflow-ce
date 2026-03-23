@@ -1,0 +1,38 @@
+# Environment files (use docker-compose env vars instead)
+.env
+.env.local
+.env.*.local
+
+# Node modules (will be installed in container)
+node_modules
+npm-debug.log*
+
+# Git
+.git
+.gitignore
+
+# Documentation
+README.md
+*.md
+
+# Docker files (don't need in image)
+docker-compose.yml
+Dockerfile
+.dockerignore
+
+# IDE
+.vscode
+.idea
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+
+# Test files (optional - comment out if you want webhook_tester.html in production)
+# webhook_tester.html
+

@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Supago Automation</title>
+  <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>🤖 Supago Automation</h1>
+      <div class="status" id="status">
+        <span class="status-dot"></span>
+        <span id="statusText">Idle</span>
+      </div>
+    </header>
+
+    <section class="settings">
+      <h2>Settings</h2>
+      
+      <div class="form-group">
+        <label for="websiteName">Website:</label>
+        <select id="websiteName">
+          <option value="WINFIX">WINFIX</option>
+          <option value="AUTOEXCHANGE">AUTOEXCHANGE</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label for="dbApiUrl">Database API URL:</label>
+        <!-- Default to production CE API; can be overridden per-browser -->
+        <input type="text" id="dbApiUrl" value="https://autoflow-ce-api.botauto.online" />
+      </div>
+
+      <div class="form-group">
+        <label for="automationMode">Automation Mode:</label>
+        <select id="automationMode">
+          <option value="both">Both (Pending + In-Process)</option>
+          <option value="pending">Pending Only</option>
+          <option value="in_process">In-Process Only</option>
+        </select>
+        <small class="help-text">Controls which phase this tab handles. Use separate tabs for different modes.</small>
+      </div>
+
+      <button id="saveSettings" class="btn btn-primary">Save Settings</button>
+    </section>
+
+    <section class="credentials">
+      <h2>Credentials</h2>
+      
+      <div class="form-group">
+        <label for="username">Username:</label>
+        <input type="text" id="username" placeholder="agve11" />
+      </div>
+
+      <div class="form-group">
+        <label for="password">Password:</label>
+        <input type="password" id="password" placeholder="••••••••" />
+      </div>
+
+      <button id="saveCredentials" class="btn btn-primary">Save Credentials</button>
+    </section>
+
+    <section class="actions">
+      <h2>Actions</h2>
+      
+      <button id="openMiniWindow" class="btn btn-secondary">Open Mini Window</button>
+      <button id="runNow" class="btn btn-success">▶ Run Now</button>
+      <button id="clearData" class="btn btn-danger">🗑️ Clear All Data</button>
+    </section>
+
+    <section class="info">
+      <h2>Info</h2>
+      <div class="info-item">
+        <strong>Refresh Interval:</strong> 3 minutes (±30s)
+      </div>
+      <div class="info-item">
+        <strong>Auto-Process:</strong> Enabled
+      </div>
+      <div class="info-item">
+        <strong>Status:</strong> <span id="processingStatus">Waiting...</span>
+      </div>
+    </section>
+
+    <footer>
+      <small>v1.0.0 | Supago Order Automation</small>
+    </footer>
+  </div>
+
+  <script src="../utils/crypto.js"></script>
+  <script src="../utils/storage.js"></script>
+  <script src="popup.js"></script>
+</body>
+</html>

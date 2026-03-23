@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Supago Webhook Tester</title>
+    <style>
+        body {
+            font-family: system-ui, sans-serif;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .card {
+            border: 1px solid #ddd;
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+
+        input,
+        select,
+        textarea {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        button {
+            background: #2563eb;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background: #1d4ed8;
+        }
+
+        pre {
+            background: #f1f5f9;
+            padding: 15px;
+            border-radius: 4px;
+            overflow-x: auto;
+        }
+
+        .success {
+            color: #16a34a;
+        }
+
+        .error {
+            color: #dc2626;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Supago Webhook Tester</h1>
+
+    <div class="card">
+        <h2>View Orders</h2>
+        <p>View orders processed by Chrome Extension (from the shared <code>transactions</code> table).</p>
+        <button onclick="loadOrders()">Load Orders</button>
+        <div id="ordersList"></div>
+    </div>
+
+    <div class="card">
+        <h2>Simulate Webhook Response</h2>
+        <p>Use this to manually trigger approve/reject actions in the extension by updating the order status in the
+            local database.</p>
+
+        <label for="orderHash">Order Hash:</label>
+        <input type="text" id="orderHash"
+            placeholder="e.g. e937a26fdde33481f805c6a5f65144ad185aa8e795fedab5de8baf5f0ea922bd">
+        <small style="color: #666;">Click "Load Orders" above to see available order hashes</small>
+
+        <label for="action">Action:</label>
+        <select id="action">
+            <option value="success">Success (Approve)</option>
+            <option value="failed">Failed (Reject)</option>
+        </select>
+
+        <label for="utr">UTR (Transaction Reference): <span style="color: red;">*</span></label>
+        <input type="text" id="utr" placeholder="Enter UTR number" required>
+        <small style="color: #666;">This will be saved along with the order status in the database</small>
+
+        <button onclick="updateOrderStatus()">Update Order Status</button>
+
+        <div id="result"></div>
+    </div>
+
+    <script>
+        async function loadOrders() {
+            const ordersDiv = document.getElementById('ordersList');
+            ordersDiv.innerHTML = '<p>Loading orders...</p>';
+
+            try {
+                // Use relative URL so it works on any domain (localhost, staging, production)
+                const res = await fetch('/api/orders');
+                const data = await res.json();
+
+                if (data.orders && data.orders.length > 0) {
+                    let html = `<h3>Found ${data.orders.length} orders (Chrome Extension transactions):</h3><table style="width: 100%; border-collapse: collapse; margin-top: 10px;">
+                        <thead>
+                            <tr style="background: #f1f5f9;">
+                                <th style="padding: 8px; border: 1px solid #ddd; text-align: left;">Order ID</th>
+                                <th style="padding: 8px; border: 1px solid #ddd; text-align: left;">Order Hash</th>
+                                <th style="padding: 8px; border: 1px solid #ddd; text-align: left;">Amount</th>
+                                <th style="padding: 8px; border: 1px solid #ddd; text-align: left;">Status</th>
+                                <th style="padding: 8px; border: 1px solid #ddd; text-align: left;">Gateway Status</th>
+                                <th style="padding: 8px; border: 1px solid #ddd; text-align: left;">UTR</th>
+                                <th style="padding: 8px; border: 1px solid #ddd; text-align: left;">Action</th>
+                            </tr>
+                        </thead>
+                        <tbody>`;
+
+                    data.orders.forEach(order => {
+                        const hashShort = order.order_hash.substring(0, 20) + '...';
+                        html += `<tr>
+                            <td style="padding: 8px; border: 1px solid #ddd;">
+                                <code style="font-size: 11px;">${order.order_id || 'N/A'}</code>
+                                <br><small style="color: #666;">(Order ID - do not use)</small>
+                            </td>
+                            <td style="padding: 8px; border: 1px solid #ddd;">
+                                <code style="font-size: 11px; cursor: pointer; background: #f1f5f9; padding: 4px; border-radius: 4px; display: inline-block;" onclick="copyHash('${order.order_hash}')" title="Click to copy full hash">${hashShort}</code>
+                                <br><small style="color: #2563eb; cursor: pointer;" onclick="copyHash('${order.order_hash}')">📋 Click to copy full hash</small>
+                            </td>
+                            <td style="padding: 8px; border: 1px solid #ddd;">${order.amount || 0}</td>
+                            <td style="padding: 8px; border: 1px solid #ddd;">
+                                <span style="padding: 4px 8px; border-radius: 4px; font-size: 12px; 
+                                    background: ${order.status === 'success' ? '#d1fae5' : order.status === 'failed' ? '#fee2e2' : order.status === 'in_process' ? '#dbeafe' : '#fef3c7'};
+                                    color: ${order.status === 'success' ? '#065f46' : order.status === 'failed' ? '#991b1b' : order.status === 'in_process' ? '#1e40af' : '#92400e'};">
+                                    ${order.status || 'pending'}
+                                </span>
+                            </td>
+                            <td style="padding: 8px; border: 1px solid #ddd;">
+                                <span style="padding: 4px 8px; border-radius: 4px; font-size: 12px; 
+                                    background: ${order.gateway_status === 'success' ? '#d1fae5' : order.gateway_status === 'failed' ? '#fee2e2' : '#fef3c7'};
+                                    color: ${order.gateway_status === 'success' ? '#065f46' : order.gateway_status === 'failed' ? '#991b1b' : '#92400e'};">
+                                    ${order.gateway_status || '-'}
+                                </span>
+                            </td>
+                            <td style="padding: 8px; border: 1px solid #ddd;">
+                                <code style="font-size: 11px;">${order.utr || '-'}</code>
+                            </td>
+                            <td style="padding: 8px; border: 1px solid #ddd;">
+                                <button onclick="useHash('${order.order_hash}')" style="padding: 6px 12px; font-size: 12px; margin: 2px; background: #2563eb; color: white; border: none; border-radius: 4px; cursor: pointer; font-weight: bold;">Use Hash</button>
+                            </td>
+                        </tr>`;
+                    });
+
+                    html += '</tbody></table>';
+                    ordersDiv.innerHTML = html;
+                } else {
+                    ordersDiv.innerHTML = '<p class="info">No orders found (no Chrome Extension transactions in database).</p>';
+                }
+            } catch (error) {
+                ordersDiv.innerHTML = `<p class="error">Error loading orders: ${error.message}</p>`;
+            }
+        }
+
+        function copyHash(hash) {
+            navigator.clipboard.writeText(hash).then(() => {
+                // Show a brief notification instead of alert
+                const notification = document.createElement('div');
+                notification.textContent = '✅ Order hash copied to clipboard!';
+                notification.style.cssText = 'position: fixed; top: 20px; right: 20px; background: #16a34a; color: white; padding: 12px 20px; border-radius: 8px; z-index: 10000; box-shadow: 0 4px 6px rgba(0,0,0,0.1);';
+                document.body.appendChild(notification);
+                setTimeout(() => notification.remove(), 2000);
+            }).catch(() => {
+                // Fallback if clipboard API fails
+                document.getElementById('orderHash').value = hash;
+            });
+        }
+
+        function useHash(hash) {
+            document.getElementById('orderHash').value = hash;
+            document.getElementById('orderHash').scrollIntoView({ behavior: 'smooth', block: 'center' });
+            // Highlight the input field briefly
+            document.getElementById('orderHash').style.background = '#fef3c7';
+            setTimeout(() => {
+                document.getElementById('orderHash').style.background = '';
+            }, 1000);
+        }
+
+        async function updateOrderStatus() {
+            const orderHash = document.getElementById('orderHash').value.trim();
+            const action = document.getElementById('action').value;
+            const utr = document.getElementById('utr').value.trim();
+            const resultDiv = document.getElementById('result');
+
+            if (!orderHash) {
+                resultDiv.innerHTML = '<p class="error">Please enter an order hash</p>';
+                return;
+            }
+
+            // Validate that it's a hash (64 hex characters) and not an Order ID (UUID)
+            const isUUID = /^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/i.test(orderHash);
+            if (isUUID) {
+                resultDiv.innerHTML = '<p class="error">❌ You entered an Order ID (UUID), not an Order Hash!<br>' +
+                    'Please click the "Use Hash" button in the table above, or copy the full hash (64 characters) from the Order Hash column.</p>';
+                return;
+            }
+
+            if (orderHash.length !== 64 || !/^[0-9a-f]{64}$/i.test(orderHash)) {
+                resultDiv.innerHTML = '<p class="error">❌ Invalid order hash format. Order hash must be 64 hexadecimal characters.<br>' +
+                    'Please click the "Use Hash" button in the table above to use the correct hash.</p>';
+                return;
+            }
+
+            if (!utr || utr.trim() === '') {
+                resultDiv.innerHTML = '<p class="error">⚠️ Please enter a UTR (Transaction Reference) number</p>';
+                document.getElementById('utr').focus();
+                return;
+            }
+
+            try {
+                // First check if order exists (use relative URL)
+                const checkRes = await fetch(`/api/orders/exists/${orderHash}`);
+                const checkData = await checkRes.json();
+
+                if (!checkData.exists) {
+                    resultDiv.innerHTML = '<p class="error">❌ Order not found in database<br>' +
+                        'Make sure you\'re using the Order Hash (64 characters), not the Order ID (UUID).<br>' +
+                        'Click "Load Orders" and use the "Use Hash" button.</p>';
+                    return;
+                }
+
+                // Update the api_status via callback endpoint (use relative URL)
+                const updateRes = await fetch(`/api/orders/hash/${orderHash}/callback`, {
+                    method: 'PUT',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({
+                        api_status: action,
+                        txn_id: `TXN-${Date.now()}`,
+                        utr: utr || `UTR-${Date.now()}`
+                    })
+                });
+
+                const updateData = await updateRes.json();
+
+                if (updateData.success) {
+                    resultDiv.innerHTML = `<p class="success">✅ Order callback updated successfully!</p>` +
+                        `<pre>Order ID: ${updateData.order.order_id}\nAPI Status: ${updateData.order.api_status}\nUTR: ${utr || 'Not provided'}</pre>`;
+                    
+                    // Clear the form
+                    document.getElementById('orderHash').value = '';
+                    document.getElementById('utr').value = '';
+                    
+                    // Reload orders list to show updated status
+                    setTimeout(() => loadOrders(), 1000);
+                } else {
+                    resultDiv.innerHTML = `<p class="error">Error: ${updateData.error}</p>`;
+                }
+
+            } catch (error) {
+                resultDiv.innerHTML = `<p class="error">Error: ${error.message}</p>`;
+            }
+        }
+    </script>
+</body>
+
+</html>

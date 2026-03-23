@@ -1,0 +1,666 @@
+ [Supago] Content script initialized
+ [Supago] ========== Starting automation cycle ==========
+ [Supago] Execution config API response: {found: true, login: {…}}
+ [Supago] Execution config for "botauto1": channel=chrome_extension, is_active=true, handles_pending=true, handles_in_process=true
+ [Supago] Full login config object: {
+  "id": 2,
+  "username": "botauto1",
+  "is_active": true,
+  "execution_channel": "chrome_extension",
+  "login_group_key": "g1",
+  "handles_pending": true,
+  "handles_in_process": true
+}
+ [Supago] Dashboard path detected in URL
+ [Supago] Session appears active (sessions last 24 hours)
+ [Supago] Automation mode: both
+ [Supago] Navigating to Manual Withdrawal Requests...
+ [Supago] Clicked Manual Withdrawal Requests (href: /withdraw-request )
+ [Supago] Dashboard path detected in URL
+ [Supago] Ensuring pending orders are loaded...
+ [Supago] About to click Load button (pending) [attempt 1] {text: 'Load'}
+ [Supago] Clicked Load button (pending) [attempt 1]
+ [Supago] Waiting 5 seconds after Load button click for table to refresh...
+ [Supago] Dashboard path detected in URL
+ [Supago] ========== PHASE: Pending Orders ==========
+ [Supago] Processing pending orders...
+ [Supago] Ensuring we are on PENDING view before processing pending orders...
+ [Supago] Ensuring pending view...
+ [Supago] Current view detected: pending
+ [Supago] Already on pending view
+ [Supago] Ensuring pending orders are loaded...
+ [Supago] About to click Load button (pending) [attempt 1] {text: 'Load'}
+ [Supago] Clicked Load button (pending) [attempt 1]
+ [Supago] Waiting 5 seconds after Load button click for table to refresh...
+ [Supago] Ensuring pending orders are loaded...
+ [Supago] About to click Load button (pending) [attempt 1] {text: 'Load'}
+ [Supago] Clicked Load button (pending) [attempt 1]
+ [Supago] Waiting 5 seconds after Load button click for table to refresh...
+ [Scraper] Found 5 potential table rows on page
+ [Scraper] Processing row 1/5: 1BANK NAME :PUNJAB NATIONAL BANK ACCOUNT NUMBER :3884000101073034ACC HOLDER NAME :NISHA SHAKYAIFSC C
+ [Scraper] Row has order data indicators - treating as valid
+ [Scraper] Table row cells: (13) [{…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}]
+ [Scraper] Found amount in cell 7 (span): 13200
+ [Scraper] Extracted username from Username column (cell[5]): "Vimal7007"
+ [Scraper] Extracted transaction_date from Transaction Date column (cell[10]): "26/12/2025 17:22:04"
+ [Scraper] Found structured bank details in cell 1 : {bank_name: 'PUNJAB NATIONAL BANK', acc_number: '3884000101073034', acc_holder_name: 'NISHA SHAKYA', ifsc: 'PUNB0388400'}
+ [Scraper] Extracted order data: {order_id: '1', date: '26/12/2025 17:22:04', transaction_date: '26/12/2025 17:22:04', username: 'Vimal7007', payment_name: 'IMPS', …}
+ [Scraper] Row 1 extracted data: {order_id: '1', has_acc_number: true, has_amount: true, amount_value: '13200'}
+ [Scraper] ✅ Row 1 added to orders list
+ [Scraper] Processing row 2/5: 2BANK NAME :CANARA BANK ACCOUNT NUMBER :6711101004317ACC HOLDER NAME :KONDA RAKESH IFSC CODE :CNRB00
+ [Scraper] Row has order data indicators - treating as valid
+ [Scraper] Table row cells: (13) [{…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}]
+ [Scraper] Found amount in cell 7 (span): 1000
+ [Scraper] Extracted username from Username column (cell[5]): "Ve100"
+ [Scraper] Extracted transaction_date from Transaction Date column (cell[10]): "26/12/2025 17:22:06"
+ [Scraper] Found structured bank details in cell 1 : {bank_name: 'CANARA BANK', acc_number: '6711101004317', acc_holder_name: 'KONDA RAKESH', ifsc: 'CNRB0006711'}
+ [Scraper] Extracted order data: {order_id: '2', date: '26/12/2025 17:22:06', transaction_date: '26/12/2025 17:22:06', username: 'Ve100', payment_name: 'IMPS', …}
+ [Scraper] Row 2 extracted data: {order_id: '2', has_acc_number: true, has_amount: true, amount_value: '1000'}
+ [Scraper] ✅ Row 2 added to orders list
+ [Scraper] Processing row 3/5: 3BANK NAME :SBIACCOUNT NUMBER :62432885139ACC HOLDER NAME :MANJUNATH IFSC CODE :SBIN0020237agtag01ba
+ [Scraper] Row has order data indicators - treating as valid
+ [Scraper] Table row cells: (13) [{…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}]
+ [Scraper] Found amount in cell 7 (span): 1000
+ [Scraper] Extracted username from Username column (cell[5]): "Manju777"
+ [Scraper] Extracted transaction_date from Transaction Date column (cell[10]): "26/12/2025 17:22:23"
+ [Scraper] Found structured bank details in cell 1 : {bank_name: 'SBI', acc_number: '62432885139', acc_holder_name: 'MANJUNATH', ifsc: 'SBIN0020237'}
+ [Scraper] Extracted order data: {order_id: '3', date: '26/12/2025 17:22:23', transaction_date: '26/12/2025 17:22:23', username: 'Manju777', payment_name: 'IMPS', …}
+ [Scraper] Row 3 extracted data: {order_id: '3', has_acc_number: true, has_amount: true, amount_value: '1000'}
+ [Scraper] ✅ Row 3 added to orders list
+ [Scraper] Processing row 4/5: 4BANK NAME :32552387333ACCOUNT NUMBER :32552387333ACC HOLDER NAME :AJAY KUMARIFSC CODE :SBIN0004731a
+ [Scraper] Row has order data indicators - treating as valid
+ [Scraper] Table row cells: (13) [{…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}]
+ [Scraper] Found amount in cell 7 (span): 1000
+ [Scraper] Extracted username from Username column (cell[5]): "Dorimon01"
+ [Scraper] Extracted transaction_date from Transaction Date column (cell[10]): "26/12/2025 17:23:59"
+ [Scraper] Found structured bank details in cell 1 : {bank_name: '32552387333', acc_number: '32552387333', acc_holder_name: 'AJAY KUMAR', ifsc: 'SBIN0004731'}
+ [Scraper] Extracted order data: {order_id: '4', date: '26/12/2025 17:23:59', transaction_date: '26/12/2025 17:23:59', username: 'Dorimon01', payment_name: 'IMPS', …}
+ [Scraper] Row 4 extracted data: {order_id: '4', has_acc_number: true, has_amount: true, amount_value: '1000'}
+ [Scraper] ✅ Row 4 added to orders list
+ [Scraper] Processing row 5/5: 5BANK NAME :STATE BANK OF INDIA ACCOUNT NUMBER :43705654749ACC HOLDER NAME :VIPIN KUMAR IFSC CODE :S
+ [Scraper] Row has order data indicators - treating as valid
+ [Scraper] Table row cells: (13) [{…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}]
+ [Scraper] Found amount in cell 7 (span): 3000
+ [Scraper] Extracted username from Username column (cell[5]): "5200dxvipin"
+ [Scraper] Extracted transaction_date from Transaction Date column (cell[10]): "26/12/2025 17:25:35"
+ [Scraper] Found structured bank details in cell 1 : {bank_name: 'STATE BANK OF INDIA', acc_number: '43705654749', acc_holder_name: 'VIPIN KUMAR', ifsc: 'SBIN0005968'}
+ [Scraper] Extracted order data: {order_id: '5', date: '26/12/2025 17:25:35', transaction_date: '26/12/2025 17:25:35', username: '5200dxvipin', payment_name: 'IMPS', …}
+ [Scraper] Row 5 extracted data: {order_id: '5', has_acc_number: true, has_amount: true, amount_value: '3000'}
+ [Scraper] ✅ Row 5 added to orders list
+ [Scraper] Summary: 5 valid orders, 0 invalid rows, 0 incomplete orders, 0 skipped
+ [Supago] Found 5 orders on page
+ [Supago] ✅ Using explicit AUTOEXCHANGE selection from settings (overriding username-based mapping)
+ [Supago] Username for order_id: "botauto1"
+ [Supago] Processing 5 orders...
+ [Supago] Order list: 1. Vimal7007 - ₹13200 (3884000101073034), 2. Ve100 - ₹1000 (6711101004317), 3. Manju777 - ₹1000 (62432885139), 4. Dorimon01 - ₹1000 (32552387333), 5. 5200dxvipin - ₹3000 (43705654749)
+ [Supago] ========== Processing order 1/5 ==========
+ [Supago] Order details: username=Vimal7007, amount=13200, acc_number=3884000101073034, bank=PUNJAB NATIONAL BANK
+ [Supago] 🔍 Order 1 hash generation: {hash: '251a8f22dc7fe8e5...', fullHash: '251a8f22dc7fe8e5c331462b0601084bf90de5f88e10dd156e0bd96a9b7ac354', orderData: {…}}
+ [Supago] 🔍 Order 1 DB check result: {exists: false, existingOrderId: undefined, existingStatus: undefined, existingGatewayStatus: undefined, existingFinalAction: undefined}
+ [Supago] Order data before API call: {order_id: '1', username: 'Vimal7007', amount: '13200', acc_number: '3884000101073034', ifsc: 'PUNB0388400', …}
+ [Supago] Generated UUID v4 for order: 9ad9c8ad-c0cd-43a4-baae-fb8805565900_botauto1 (base: 9ad9c8ad-c0cd-43a4-baae-fb8805565900, loginTag: botauto1)
+ [Supago] ✅ Order saved to database immediately after reading: 9ad9c8ad-c0cd-43a4-baae-fb8805565900_botauto1
+ [Supago] 🔄 Calling GatewayHub for order_id: 9ad9c8ad-c0cd-43a4-baae-fb8805565900_botauto1
+ [API] Fetching configuration from backend...
+ [API] Configuration loaded successfully
+ [GatewayHub API] Parsed order data: {original_amount: '13200', parsed_amount: 13200, formatted_amount: 13200, name: 'Vimal7007', acc_number: '3884000101073034', …}
+ [Crypto] Normalized Payload (Stripped Spaces): {"amount":13200,"name":"Vimal7007","order_id":"9ad9c8ad-c0cd-43a4-baae-fb8805565900_botauto1","acc_holder_name":"NISHASHAKYA","acc_number":"3884000101073034","bank_name":"PUNJABNATIONALBANK","ifsc":"PUNB0388400","userId":1}
+ [Crypto] Private Key Length: 78
+ [Crypto] Generated Hash (Base64): pzi2hAs8ewgqWG/fX2Xtd9q4mWSsssTsyuHLAaqBrDM=
+ [GatewayHub API] Request URL: https://api-prod.gatewayhub.live/withdraw/bot
+ [GatewayHub API] Payload: {amount: 13200, name: 'Vimal7007', order_id: '9ad9c8ad-c0cd-43a4-baae-fb8805565900_botauto1', acc_holder_name: 'NISHA SHAKYA', acc_number: '3884000101073034', …}
+ [GatewayHub API] Payload JSON (used for hash & body): {"amount":13200,"name":"Vimal7007","order_id":"9ad9c8ad-c0cd-43a4-baae-fb8805565900_botauto1","acc_holder_name":"NISHA SHAKYA","acc_number":"3884000101073034","bank_name":"PUNJAB NATIONAL BANK","ifsc":"PUNB0388400","userId":1}
+ [GatewayHub API] Using public-key: b30c9e938e0a933c9dbd...e2f6d0_1757685440749
+ [GatewayHub API] Generated payload-hash: pzi2hAs8ewgqWG/fX2Xt...HLAaqBrDM=
+ [GatewayHub API] Data string (first 100 chars): {"amount":13200,"name":"Vimal7007","order_id":"9ad9c8ad-c0cd-43a4-baae-fb8805565900_botauto1","acc_h
+ [GatewayHub API] Response: status=201, time=1443ms, body={"data":{"message":"Withdrawal successfully created","data":278679},"statusCode":201,"error":null,"responseTimeMs":1443}
+ [Supago] GatewayHub API Response: status=201, time=1443ms, body={"data":{"message":"Withdrawal successfully created","data":278679},"statusCode":201,"error":null,"responseTimeMs":1443}
+ [Supago] ✅ API request completed (201 Created)
+ [Supago] ✅ GatewayHub API success! Status: success, Txn ID: 9ad9c8ad-c0cd-43a4-baae-fb8805565900_botauto1, UTR: 
+ [Supago] GatewayHub received request successfully - clicking "In Process" button
+ [Scraper] Row has order data indicators - treating as valid
+ [Scraper] Found order row by account number: 3884000101073034
+ [Scraper] Found 3 buttons in row, searching for "In Process"...
+ [Scraper] ✅ Found "In Process" button: In Process
+ [Supago] ✅ Clicked "In Process" button
+ [Supago] ✅ Order status updated to 'in_process' in database (gateway_status will be set when webhook arrives)
+ [Scraper] Row has order data indicators - treating as valid
+ [Scraper] Row has order data indicators - treating as valid
+ [Scraper] Row has order data indicators - treating as valid
+ [Scraper] Row has order data indicators - treating as valid
+ [Scraper] Row has order data indicators - treating as valid
+ [Scraper] Row has order data indicators - treating as valid
+ [Scraper] Row has order data indicators - treating as valid
+ [Scraper] Row has order data indicators - treating as valid
+ [Scraper] Could not find row for order: {acc_number: '3884000101073034', amount: '13200', bank_name: 'PUNJAB NATIONAL BANK'}
+findInProcessButton @ scraper.js:524
+processPendingOrders @ content.js:979
+await in processPendingOrders
+runAutomation @ content.js:2044
+await in runAutomation
+initialize @ content.js:2570
+await in initialize
+(anonymous) @ content.js:2580
+ [Supago] ✅ Row for order 9ad9c8ad-c0cd-43a4-baae-fb8805565900_botauto1 removed from pending table (moved to in-process)
+ [Supago] ✅ Successfully processed order 1/5 (clicked "In Process")
+ [Supago] Preparing for next order (2/5)...
+ [Supago] Progress after order 1/5: Processed: 1, Skipped: 0
+ [Supago] ========== Processing order 2/5 ==========
+ [Supago] Order details: username=Ve100, amount=1000, acc_number=6711101004317, bank=CANARA BANK
+ [Supago] 🔍 Order 2 hash generation: {hash: '1127451d4919ddba...', fullHash: '1127451d4919ddbaa039dfc0857dee123c36ee5d27b89e6b5ef224b4cd4cf91c', orderData: {…}}
+ [Supago] 🔍 Order 2 DB check result: {exists: false, existingOrderId: undefined, existingStatus: undefined, existingGatewayStatus: undefined, existingFinalAction: undefined}
+ [Supago] Order data before API call: {order_id: '2', username: 'Ve100', amount: '1000', acc_number: '6711101004317', ifsc: 'CNRB0006711', …}
+ [Supago] Generated UUID v4 for order: f3962802-df7a-4a08-8f28-3b666fed7251_botauto1 (base: f3962802-df7a-4a08-8f28-3b666fed7251, loginTag: botauto1)
+ [Supago] ✅ Order saved to database immediately after reading: f3962802-df7a-4a08-8f28-3b666fed7251_botauto1
+ [Supago] 🔄 Calling GatewayHub for order_id: f3962802-df7a-4a08-8f28-3b666fed7251_botauto1
+ [GatewayHub API] Parsed order data: {original_amount: '1000', parsed_amount: 1000, formatted_amount: 1000, name: 'Ve100', acc_number: '6711101004317', …}
+ [Crypto] Normalized Payload (Stripped Spaces): {"amount":1000,"name":"Ve100","order_id":"f3962802-df7a-4a08-8f28-3b666fed7251_botauto1","acc_holder_name":"KONDARAKESH","acc_number":"6711101004317","bank_name":"CANARABANK","ifsc":"CNRB0006711","userId":1}
+ [Crypto] Private Key Length: 78
+ [Crypto] Generated Hash (Base64): Iz1VEPD2CJpcIKhsXuNwTuhX6abKwwrKoStNGfPlzEE=
+ [GatewayHub API] Request URL: https://api-prod.gatewayhub.live/withdraw/bot
+ [GatewayHub API] Payload: {amount: 1000, name: 'Ve100', order_id: 'f3962802-df7a-4a08-8f28-3b666fed7251_botauto1', acc_holder_name: 'KONDA RAKESH', acc_number: '6711101004317', …}
+ [GatewayHub API] Payload JSON (used for hash & body): {"amount":1000,"name":"Ve100","order_id":"f3962802-df7a-4a08-8f28-3b666fed7251_botauto1","acc_holder_name":"KONDA RAKESH","acc_number":"6711101004317","bank_name":"CANARA BANK","ifsc":"CNRB0006711","userId":1}
+ [GatewayHub API] Using public-key: b30c9e938e0a933c9dbd...e2f6d0_1757685440749
+ [GatewayHub API] Generated payload-hash: Iz1VEPD2CJpcIKhsXuNw...tNGfPlzEE=
+ [GatewayHub API] Data string (first 100 chars): {"amount":1000,"name":"Ve100","order_id":"f3962802-df7a-4a08-8f28-3b666fed7251_botauto1","acc_holder
+ [GatewayHub API] Response: status=201, time=791ms, body={"data":{"message":"Withdrawal successfully created","data":278680},"statusCode":201,"error":null,"responseTimeMs":791}
+ [Supago] GatewayHub API Response: status=201, time=791ms, body={"data":{"message":"Withdrawal successfully created","data":278680},"statusCode":201,"error":null,"responseTimeMs":791}
+ [Supago] ✅ API request completed (201 Created)
+ [Supago] ✅ GatewayHub API success! Status: success, Txn ID: f3962802-df7a-4a08-8f28-3b666fed7251_botauto1, UTR: 
+ [Supago] GatewayHub received request successfully - clicking "In Process" button
+ [Scraper] Row has order data indicators - treating as valid
+ [Scraper] Found order row by account number: 6711101004317
+ [Scraper] Found 3 buttons in row, searching for "In Process"...
+ [Scraper] ✅ Found "In Process" button: In Process
+ [Supago] ✅ Clicked "In Process" button
+ [Supago] ✅ Order status updated to 'in_process' in database (gateway_status will be set when webhook arrives)
+ [Scraper] Row has order data indicators - treating as valid
+ [Scraper] Row has order data indicators - treating as valid
+ [Scraper] Row has order data indicators - treating as valid
+ [Scraper] Row has order data indicators - treating as valid
+ [Scraper] Row has order data indicators - treating as valid
+ [Scraper] Row has order data indicators - treating as valid
+ [Scraper] Could not find row for order: {acc_number: '6711101004317', amount: '1000', bank_name: 'CANARA BANK'}
+findInProcessButton @ scraper.js:524
+processPendingOrders @ content.js:979
+await in processPendingOrders
+runAutomation @ content.js:2044
+await in runAutomation
+initialize @ content.js:2570
+await in initialize
+(anonymous) @ content.js:2580
+ [Supago] ✅ Row for order f3962802-df7a-4a08-8f28-3b666fed7251_botauto1 removed from pending table (moved to in-process)
+ [Supago] ✅ Successfully processed order 2/5 (clicked "In Process")
+ [Supago] Preparing for next order (3/5)...
+ [Supago] Progress after order 2/5: Processed: 2, Skipped: 0
+ [Supago] ========== Processing order 3/5 ==========
+ [Supago] Order details: username=Manju777, amount=1000, acc_number=62432885139, bank=SBI
+ [Supago] 🔍 Order 3 hash generation: {hash: 'b6cc86ffe908d256...', fullHash: 'b6cc86ffe908d2568b46adeaeacf85d1617f4dc8e8a9175f1ddce105cc1ef208', orderData: {…}}
+ [Supago] 🔍 Order 3 DB check result: {exists: false, existingOrderId: undefined, existingStatus: undefined, existingGatewayStatus: undefined, existingFinalAction: undefined}
+ [Supago] Order data before API call: {order_id: '3', username: 'Manju777', amount: '1000', acc_number: '62432885139', ifsc: 'SBIN0020237', …}
+ [Supago] Generated UUID v4 for order: fca6b44f-3009-4770-9f2d-cc1e33d10640_botauto1 (base: fca6b44f-3009-4770-9f2d-cc1e33d10640, loginTag: botauto1)
+ [Supago] ✅ Order saved to database immediately after reading: fca6b44f-3009-4770-9f2d-cc1e33d10640_botauto1
+ [Supago] 🔄 Calling GatewayHub for order_id: fca6b44f-3009-4770-9f2d-cc1e33d10640_botauto1
+ [GatewayHub API] Parsed order data: {original_amount: '1000', parsed_amount: 1000, formatted_amount: 1000, name: 'Manju777', acc_number: '62432885139', …}
+ [Crypto] Normalized Payload (Stripped Spaces): {"amount":1000,"name":"Manju777","order_id":"fca6b44f-3009-4770-9f2d-cc1e33d10640_botauto1","acc_holder_name":"MANJUNATH","acc_number":"62432885139","bank_name":"SBI","ifsc":"SBIN0020237","userId":1}
+ [Crypto] Private Key Length: 78
+ [Crypto] Generated Hash (Base64): NQitRZzLZOgnHiUNWVntAhRJhbBXvi+l2cezbOZZWwI=
+ [GatewayHub API] Request URL: https://api-prod.gatewayhub.live/withdraw/bot
+ [GatewayHub API] Payload: {amount: 1000, name: 'Manju777', order_id: 'fca6b44f-3009-4770-9f2d-cc1e33d10640_botauto1', acc_holder_name: 'MANJUNATH', acc_number: '62432885139', …}
+ [GatewayHub API] Payload JSON (used for hash & body): {"amount":1000,"name":"Manju777","order_id":"fca6b44f-3009-4770-9f2d-cc1e33d10640_botauto1","acc_holder_name":"MANJUNATH","acc_number":"62432885139","bank_name":"SBI","ifsc":"SBIN0020237","userId":1}
+ [GatewayHub API] Using public-key: b30c9e938e0a933c9dbd...e2f6d0_1757685440749
+ [GatewayHub API] Generated payload-hash: NQitRZzLZOgnHiUNWVnt...ezbOZZWwI=
+ [GatewayHub API] Data string (first 100 chars): {"amount":1000,"name":"Manju777","order_id":"fca6b44f-3009-4770-9f2d-cc1e33d10640_botauto1","acc_hol
+ [GatewayHub API] Response: status=201, time=1088ms, body={"data":{"message":"Withdrawal successfully created","data":278681},"statusCode":201,"error":null,"responseTimeMs":1088}
+ [Supago] GatewayHub API Response: status=201, time=1088ms, body={"data":{"message":"Withdrawal successfully created","data":278681},"statusCode":201,"error":null,"responseTimeMs":1088}
+ [Supago] ✅ API request completed (201 Created)
+ [Supago] ✅ GatewayHub API success! Status: success, Txn ID: fca6b44f-3009-4770-9f2d-cc1e33d10640_botauto1, UTR: 
+ [Supago] GatewayHub received request successfully - clicking "In Process" button
+ [Scraper] Row has order data indicators - treating as valid
+ [Scraper] Found order row by account number: 62432885139
+ [Scraper] Found 3 buttons in row, searching for "In Process"...
+ [Scraper] ✅ Found "In Process" button: In Process
+ [Supago] ✅ Clicked "In Process" button
+ [Supago] ✅ Order status updated to 'in_process' in database (gateway_status will be set when webhook arrives)
+ [Scraper] Row has order data indicators - treating as valid
+ [Scraper] Row has order data indicators - treating as valid
+ [Scraper] Row has order data indicators - treating as valid
+ [Scraper] Found order row by amount + bank: 1000 SBI
+ [Scraper] Found 3 buttons in row, searching for "In Process"...
+ [Scraper] ✅ Found "In Process" button: In Process
+ [Supago] ⚠️ Row for order fca6b44f-3009-4770-9f2d-cc1e33d10640_botauto1 still visible after clicking "In Process" - waiting longer...
+processPendingOrders @ content.js:981
+await in processPendingOrders
+runAutomation @ content.js:2044
+await in runAutomation
+initialize @ content.js:2570
+await in initialize
+(anonymous) @ content.js:2580
+ [Supago] ✅ Successfully processed order 3/5 (clicked "In Process")
+ [Supago] Preparing for next order (4/5)...
+ [Supago] Progress after order 3/5: Processed: 3, Skipped: 0
+ [Supago] ========== Processing order 4/5 ==========
+ [Supago] Order details: username=Dorimon01, amount=1000, acc_number=32552387333, bank=32552387333
+ [Supago] 🔍 Order 4 hash generation: {hash: 'd3e2ad80ee99a9ba...', fullHash: 'd3e2ad80ee99a9ba678475564a4d162ece0d89cd54387c0483a86d42f3299e8c', orderData: {…}}
+ [Supago] 🔍 Order 4 DB check result: {exists: false, existingOrderId: undefined, existingStatus: undefined, existingGatewayStatus: undefined, existingFinalAction: undefined}
+ [Supago] Order data before API call: {order_id: '4', username: 'Dorimon01', amount: '1000', acc_number: '32552387333', ifsc: 'SBIN0004731', …}
+ [Supago] Generated UUID v4 for order: 6f9fbd30-8216-4f29-8820-d195ea766a73_botauto1 (base: 6f9fbd30-8216-4f29-8820-d195ea766a73, loginTag: botauto1)
+ [Supago] ✅ Order saved to database immediately after reading: 6f9fbd30-8216-4f29-8820-d195ea766a73_botauto1
+ [Supago] 🔄 Calling GatewayHub for order_id: 6f9fbd30-8216-4f29-8820-d195ea766a73_botauto1
+ [GatewayHub API] Parsed order data: {original_amount: '1000', parsed_amount: 1000, formatted_amount: 1000, name: 'Dorimon01', acc_number: '32552387333', …}
+ [Crypto] Normalized Payload (Stripped Spaces): {"amount":1000,"name":"Dorimon01","order_id":"6f9fbd30-8216-4f29-8820-d195ea766a73_botauto1","acc_holder_name":"AJAYKUMAR","acc_number":"32552387333","bank_name":"32552387333","ifsc":"SBIN0004731","userId":1}
+ [Crypto] Private Key Length: 78
+ [Crypto] Generated Hash (Base64): kbkByKorPovLx/3JoHvvSF0fwm0bn9XQeTxPHVQvze0=
+ [GatewayHub API] Request URL: https://api-prod.gatewayhub.live/withdraw/bot
+ [GatewayHub API] Payload: {amount: 1000, name: 'Dorimon01', order_id: '6f9fbd30-8216-4f29-8820-d195ea766a73_botauto1', acc_holder_name: 'AJAY KUMAR', acc_number: '32552387333', …}
+ [GatewayHub API] Payload JSON (used for hash & body): {"amount":1000,"name":"Dorimon01","order_id":"6f9fbd30-8216-4f29-8820-d195ea766a73_botauto1","acc_holder_name":"AJAY KUMAR","acc_number":"32552387333","bank_name":"32552387333","ifsc":"SBIN0004731","userId":1}
+ [GatewayHub API] Using public-key: b30c9e938e0a933c9dbd...e2f6d0_1757685440749
+ [GatewayHub API] Generated payload-hash: kbkByKorPovLx/3JoHvv...xPHVQvze0=
+ [GatewayHub API] Data string (first 100 chars): {"amount":1000,"name":"Dorimon01","order_id":"6f9fbd30-8216-4f29-8820-d195ea766a73_botauto1","acc_ho
+api.js:309 [GatewayHub API] Response: status=201, time=855ms, body={"data":{"message":"Withdrawal successfully created","data":278683},"statusCode":201,"error":null,"responseTimeMs":855}
+content.js:837 [Supago] GatewayHub API Response: status=201, time=855ms, body={"data":{"message":"Withdrawal successfully created","data":278683},"statusCode":201,"error":null,"responseTimeMs":855}
+content.js:885 [Supago] ✅ API request completed (201 Created)
+content.js:932 [Supago] ✅ GatewayHub API success! Status: success, Txn ID: 6f9fbd30-8216-4f29-8820-d195ea766a73_botauto1, UTR: 
+content.js:933 [Supago] GatewayHub received request successfully - clicking "In Process" button
+scraper.js:353 [Scraper] Row has order data indicators - treating as valid
+scraper.js:504 [Scraper] Found order row by account number: 32552387333
+scraper.js:536 [Scraper] Found 3 buttons in row, searching for "In Process"...
+scraper.js:544 [Scraper] ✅ Found "In Process" button: In Process
+content.js:959 [Supago] ✅ Clicked "In Process" button
+content.js:970 [Supago] ✅ Order status updated to 'in_process' in database (gateway_status will be set when webhook arrives)
+scraper.js:353 [Scraper] Row has order data indicators - treating as valid
+scraper.js:353 [Scraper] Row has order data indicators - treating as valid
+scraper.js:524 [Scraper] Could not find row for order: {acc_number: '32552387333', amount: '1000', bank_name: '32552387333'}
+findInProcessButton @ scraper.js:524
+processPendingOrders @ content.js:979
+await in processPendingOrders
+runAutomation @ content.js:2044
+await in runAutomation
+initialize @ content.js:2570
+await in initialize
+(anonymous) @ content.js:2580
+content.js:984 [Supago] ✅ Row for order 6f9fbd30-8216-4f29-8820-d195ea766a73_botauto1 removed from pending table (moved to in-process)
+content.js:989 [Supago] ✅ Successfully processed order 4/5 (clicked "In Process")
+content.js:993 [Supago] Preparing for next order (5/5)...
+content.js:1030 [Supago] Progress after order 4/5: Processed: 4, Skipped: 0
+content.js:634 [Supago] ========== Processing order 5/5 ==========
+content.js:635 [Supago] Order details: username=5200dxvipin, amount=3000, acc_number=43705654749, bank=STATE BANK OF INDIA
+content.js:643 [Supago] 🔍 Order 5 hash generation: {hash: '6720d82a7bb4f99b...', fullHash: '6720d82a7bb4f99bfe9d635a3bfaa729dac1fb47c33a9d1cf8833a1237cc0304', orderData: {…}}
+content.js:692 [Supago] 🔍 Order 5 DB check result: {exists: false, existingOrderId: undefined, existingStatus: undefined, existingGatewayStatus: undefined, existingFinalAction: undefined}
+content.js:755 [Supago] Order data before API call: {order_id: '5', username: '5200dxvipin', amount: '3000', acc_number: '43705654749', ifsc: 'SBIN0005968', …}
+content.js:783 [Supago] Generated UUID v4 for order: 61f465a2-8249-48ad-9fa9-f5fc033e4967_botauto1 (base: 61f465a2-8249-48ad-9fa9-f5fc033e4967, loginTag: botauto1)
+content.js:814 [Supago] ✅ Order saved to database immediately after reading: 61f465a2-8249-48ad-9fa9-f5fc033e4967_botauto1
+content.js:831 [Supago] 🔄 Calling GatewayHub for order_id: 61f465a2-8249-48ad-9fa9-f5fc033e4967_botauto1
+api.js:204 [GatewayHub API] Parsed order data: {original_amount: '3000', parsed_amount: 3000, formatted_amount: 3000, name: '5200dxvipin', acc_number: '43705654749', …}
+crypto.js:62 [Crypto] Normalized Payload (Stripped Spaces): {"amount":3000,"name":"5200dxvipin","order_id":"61f465a2-8249-48ad-9fa9-f5fc033e4967_botauto1","acc_holder_name":"VIPINKUMAR","acc_number":"43705654749","bank_name":"STATEBANKOFINDIA","ifsc":"SBIN0005968","userId":1}
+crypto.js:63 [Crypto] Private Key Length: 78
+crypto.js:94 [Crypto] Generated Hash (Base64): 5GIt5u17AntBvLF6Md7wfzAj1NTXBagAmYDJybE2Ifs=
+api.js:248 [GatewayHub API] Request URL: https://api-prod.gatewayhub.live/withdraw/bot
+api.js:249 [GatewayHub API] Payload: {amount: 3000, name: '5200dxvipin', order_id: '61f465a2-8249-48ad-9fa9-f5fc033e4967_botauto1', acc_holder_name: 'VIPIN KUMAR', acc_number: '43705654749', …}
+api.js:250 [GatewayHub API] Payload JSON (used for hash & body): {"amount":3000,"name":"5200dxvipin","order_id":"61f465a2-8249-48ad-9fa9-f5fc033e4967_botauto1","acc_holder_name":"VIPIN KUMAR","acc_number":"43705654749","bank_name":"STATE BANK OF INDIA","ifsc":"SBIN0005968","userId":1}
+api.js:251 [GatewayHub API] Using public-key: b30c9e938e0a933c9dbd...e2f6d0_1757685440749
+api.js:252 [GatewayHub API] Generated payload-hash: 5GIt5u17AntBvLF6Md7w...DJybE2Ifs=
+api.js:253 [GatewayHub API] Data string (first 100 chars): {"amount":3000,"name":"5200dxvipin","order_id":"61f465a2-8249-48ad-9fa9-f5fc033e4967_botauto1","acc_
+api.js:309 [GatewayHub API] Response: status=201, time=790ms, body={"data":{"message":"Withdrawal successfully created","data":278684},"statusCode":201,"error":null,"responseTimeMs":790}
+content.js:837 [Supago] GatewayHub API Response: status=201, time=790ms, body={"data":{"message":"Withdrawal successfully created","data":278684},"statusCode":201,"error":null,"responseTimeMs":790}
+content.js:885 [Supago] ✅ API request completed (201 Created)
+content.js:932 [Supago] ✅ GatewayHub API success! Status: success, Txn ID: 61f465a2-8249-48ad-9fa9-f5fc033e4967_botauto1, UTR: 
+content.js:933 [Supago] GatewayHub received request successfully - clicking "In Process" button
+scraper.js:353 [Scraper] Row has order data indicators - treating as valid
+scraper.js:504 [Scraper] Found order row by account number: 43705654749
+scraper.js:536 [Scraper] Found 3 buttons in row, searching for "In Process"...
+scraper.js:544 [Scraper] ✅ Found "In Process" button: In Process
+content.js:959 [Supago] ✅ Clicked "In Process" button
+content.js:970 [Supago] ✅ Order status updated to 'in_process' in database (gateway_status will be set when webhook arrives)
+scraper.js:328 [Scraper] Row rejected: too few cells 1
+scraper.js:328 [Scraper] Row rejected: too few cells 1
+scraper.js:524 [Scraper] Could not find row for order: {acc_number: '43705654749', amount: '3000', bank_name: 'STATE BANK OF INDIA'}
+findInProcessButton @ scraper.js:524
+processPendingOrders @ content.js:979
+await in processPendingOrders
+runAutomation @ content.js:2044
+await in runAutomation
+initialize @ content.js:2570
+await in initialize
+(anonymous) @ content.js:2580
+content.js:984 [Supago] ✅ Row for order 61f465a2-8249-48ad-9fa9-f5fc033e4967_botauto1 removed from pending table (moved to in-process)
+content.js:989 [Supago] ✅ Successfully processed order 5/5 (clicked "In Process")
+content.js:1030 [Supago] Progress after order 5/5: Processed: 5, Skipped: 0
+content.js:1050 [Supago] Pending orders processing complete. Processed: 5, Skipped: 0, Time: 63s
+content.js:2057 [Supago] ========== PHASE: In-Process Orders (Mismatch) ==========
+content.js:1614 [Supago] 🔍 Mismatch check: login_group_key=g1
+content.js:1624 [Supago] 🔍 Mismatch API response: {orders: Array(2), count: 2}
+content.js:1626 [Supago] 🔍 Fetched 2 orders with status mismatch from DB (login_group_key: g1)
+content.js:1628 [Supago] 🔍 Sample order fields: {order_id: '1d7c10d3-bcfa-4353-a459-9105abb26b10_botauto1', status: 'in_process', gateway_status: 'success', final_action: 'none', username: 'Heena1234', …}
+content.js:1645 [Supago] 🔍 Checking order: 1d7c10d3-bcfa-4353-a459-9105abb26b10_botauto1, status: in_process, gateway_status: success, final_action: none
+content.js:1656 [Supago] ✅ Order 1d7c10d3-bcfa-4353-a459-9105abb26b10_botauto1 qualifies for processing (status: in_process, gateway_status: success)
+content.js:1645 [Supago] 🔍 Checking order: 1766740401261491677_botauto1, status: in_process, gateway_status: success, final_action: none
+content.js:1656 [Supago] ✅ Order 1766740401261491677_botauto1 qualifies for processing (status: in_process, gateway_status: success)
+content.js:1663 [Supago] 🔍 Mismatch check result: 2 orders need processing
+content.js:2060 [Supago] Found 2 order(s) with status mismatch (status != gateway_status). Navigating to in-process page...
+content.js:1349 [Supago] Switching to in-process view...
+content.js:1205 [Supago] Stopping pending polling before switching views...
+content.js:1218 [Supago] Waiting for pending processing to complete... (attempt 1/20)
+content.js:1218 [Supago] Waiting for pending processing to complete... (attempt 2/20)
+content.js:1218 [Supago] Waiting for pending processing to complete... (attempt 3/20)
+content.js:1218 [Supago] Waiting for pending processing to complete... (attempt 4/20)
+content.js:1218 [Supago] Waiting for pending processing to complete... (attempt 5/20)
+content.js:1218 [Supago] Waiting for pending processing to complete... (attempt 6/20)
+content.js:1218 [Supago] Waiting for pending processing to complete... (attempt 7/20)
+content.js:1218 [Supago] Waiting for pending processing to complete... (attempt 8/20)
+content.js:1218 [Supago] Waiting for pending processing to complete... (attempt 9/20)
+content.js:1218 [Supago] Waiting for pending processing to complete... (attempt 10/20)
+content.js:1218 [Supago] Waiting for pending processing to complete... (attempt 11/20)
+content.js:1218 [Supago] Waiting for pending processing to complete... (attempt 12/20)
+content.js:1218 [Supago] Waiting for pending processing to complete... (attempt 13/20)
+content.js:1218 [Supago] Waiting for pending processing to complete... (attempt 14/20)
+content.js:1218 [Supago] Waiting for pending processing to complete... (attempt 15/20)
+content.js:1218 [Supago] Waiting for pending processing to complete... (attempt 16/20)
+content.js:1218 [Supago] Waiting for pending processing to complete... (attempt 17/20)
+content.js:1218 [Supago] Waiting for pending processing to complete... (attempt 18/20)
+content.js:1218 [Supago] Waiting for pending processing to complete... (attempt 19/20)
+content.js:1218 [Supago] Waiting for pending processing to complete... (attempt 20/20)
+content.js:1224 [Supago] ⚠️ Pending processing did not complete within timeout, but proceeding anyway...
+stopPendingPollingAndWait @ content.js:1224
+await in stopPendingPollingAndWait
+switchToInProcessView @ content.js:1354
+runAutomation @ content.js:2073
+await in runAutomation
+initialize @ content.js:2570
+await in initialize
+(anonymous) @ content.js:2580
+content.js:1361 [Supago] Current view detected: pending
+content.js:1372 [Supago] Found 5 buttons with role="combobox"
+content.js:1451 [Supago] Found status button with text: Pending
+content.js:1467 [Supago] Clicked status combobox to open dropdown
+content.js:1583 [Supago] Found 2 dropdown options using selector: [role="option"]
+content.js:1498 [Supago] Selected "In-process" from dropdown
+content.js:1506 [Supago] ✅ Verified switch to in-process view
+content.js:321 [Supago] Ensuring in-process orders are loaded...
+content.js:327 [Supago] About to click Load button (in-process) [attempt 1] {text: 'Load'}
+content.js:331 [Supago] Clicked Load button (in-process) [attempt 1]
+content.js:333 [Supago] Waiting 5 seconds after Load button click for table to refresh...
+content.js:1523 [Supago] ✅ Final verification: Confirmed on in-process view after Load button
+content.js:1531 [Supago] Waiting for in-process table to be fully populated after Load...
+content.js:1543 [Supago] ✅ In-process table ready after Load (10 valid rows, attempt 1)
+content.js:2082 [Supago] Final verification: in-process table is ready...
+content.js:1673 [Supago] Processing orders with status mismatch...
+content.js:1698 [Supago] Mismatch processing: detected login username "botauto1", login_group_key="g1"
+content.js:1708 [Supago] Using 2 mismatch orders provided from check
+content.js:1727 [Supago] ========== Processing 2 mismatch orders ==========
+content.js:1728 [Supago] Order list: 1. Heena1234 - ₹10637 (1d7c10d3-bcfa-4353-a459-9105abb26b10_botauto1), 2. Tokyo321 - ₹3000 (1766740401261491677_botauto1)
+content.js:1747 [Supago] ========== Processing mismatch order 1/2 ==========
+content.js:1748 [Supago] Order details: order_id=1d7c10d3-bcfa-4353-a459-9105abb26b10_botauto1, username=Heena1234, amount=10637, gateway_status=success
+content.js:1781 [Supago] ✅ Order 1d7c10d3-bcfa-4353-a459-9105abb26b10_botauto1 received webhook: success → approved
+content.js:415 [Supago] ✅ Search box cleared
+content.js:415 [Supago] ✅ Search box cleared
+content.js:370 [Supago] Typed username "Heena1234" into search box
+content.js:321 [Supago] Ensuring in-process-search orders are loaded...
+content.js:327 [Supago] About to click Load button (in-process-search) [attempt 1] {text: 'Load'}
+content.js:331 [Supago] Clicked Load button (in-process-search) [attempt 1]
+content.js:333 [Supago] Waiting 5 seconds after Load button click for table to refresh...
+scraper.js:353 [Scraper] Row has order data indicators - treating as valid
+scraper.js:581 [Scraper] Found order row for approve by account number: 1148315438
+scraper.js:619 [Scraper] ✅ Found approve/accept button: accept
+content.js:1825 [Supago] ✅ Entered UTR in remark field: 572635384875
+content.js:1845 [Supago] ✅ Clicked approved button for order 1d7c10d3-bcfa-4353-a459-9105abb26b10_botauto1 (gateway_status: success, UTR: 572635384875, remark entered)
+content.js:415 [Supago] ✅ Search box cleared
+content.js:1859 [Supago] ✅ Processed order 1/2 (1d7c10d3-bcfa-4353-a459-9105abb26b10_botauto1)
+content.js:1896 [Supago] Progress: 1/2 - Processed: 1, Skipped: 0
+content.js:1747 [Supago] ========== Processing mismatch order 2/2 ==========
+content.js:1748 [Supago] Order details: order_id=1766740401261491677_botauto1, username=Tokyo321, amount=3000, gateway_status=success
+content.js:1781 [Supago] ✅ Order 1766740401261491677_botauto1 received webhook: success → approved
+content.js:415 [Supago] ✅ Search box cleared
+content.js:415 [Supago] ✅ Search box cleared
+content.js:370 [Supago] Typed username "Tokyo321" into search box
+content.js:321 [Supago] Ensuring in-process-search orders are loaded...
+content.js:327 [Supago] About to click Load button (in-process-search) [attempt 1] {text: 'Load'}
+content.js:331 [Supago] Clicked Load button (in-process-search) [attempt 1]
+content.js:333 [Supago] Waiting 5 seconds after Load button click for table to refresh...
+scraper.js:353 [Scraper] Row has order data indicators - treating as valid
+scraper.js:581 [Scraper] Found order row for approve by account number: 4448849290
+scraper.js:619 [Scraper] ✅ Found approve/accept button: accept
+content.js:1825 [Supago] ✅ Entered UTR in remark field: 536025051124
+content.js:1845 [Supago] ✅ Clicked approved button for order 1766740401261491677_botauto1 (gateway_status: success, UTR: 536025051124, remark entered)
+content.js:415 [Supago] ✅ Search box cleared
+content.js:1859 [Supago] ✅ Processed order 2/2 (1766740401261491677_botauto1)
+content.js:1896 [Supago] Progress: 2/2 - Processed: 2, Skipped: 0
+content.js:1910 [Supago] ========== In-process orders processing complete ==========
+content.js:1911 [Supago] Summary: Processed: 2, Skipped: 0, Total: 2, Time: 24s
+content.js:2121 [Supago] ✅ Mismatch processing completed successfully. Switching back to pending view...
+content.js:1234 [Supago] Ensuring pending view...
+content.js:1241 [Supago] Current view detected: in-process
+content.js:1294 [Supago] Clicked status combobox to open dropdown
+content.js:1305 [Supago] Selected "Pending" from dropdown
+content.js:1313 [Supago] ✅ Verified switch to pending view
+content.js:321 [Supago] Ensuring pending orders are loaded...
+content.js:327 [Supago] About to click Load button (pending) [attempt 1] {text: 'Load'}
+content.js:331 [Supago] Clicked Load button (pending) [attempt 1]
+content.js:333 [Supago] Waiting 5 seconds after Load button click for table to refresh...
+content.js:1330 [Supago] ✅ Final verification: Confirmed on pending view after Load button
+content.js:2124 [Supago] ✅ Switched back to pending view. Pending polling can now continue.
+content.js:2143 [Supago] ========== Automation cycle complete ==========
+content.js:2519 [Supago] Starting login config polling (every 180s)
+content.js:2524 [Supago] Starting mismatch polling (every 60s, no page refresh)
+content.js:2528 [Supago] Starting pending polling (every 2s, click Load only)
+content.js:2501 [Supago] Next page refresh in 277 seconds
+content.js:2179 [Supago] 🔄 Login config API response: {found: true, login: {…}}
+content.js:2186 [Supago] 🔄 Login config poll: channel=chrome_extension, is_active=true, handles_pending=true, handles_in_process=true
+content.js:2187 [Supago] 🔄 Full login config object: {
+  "id": 2,
+  "username": "botauto1",
+  "is_active": true,
+  "execution_channel": "chrome_extension",
+  "login_group_key": "g1",
+  "handles_pending": true,
+  "handles_in_process": true
+}
+content.js:58 [Supago] Dashboard path detected in URL
+content.js:1614 [Supago] 🔍 Mismatch check: login_group_key=g1
+content.js:1624 [Supago] 🔍 Mismatch API response: {orders: Array(6), count: 6}
+content.js:1626 [Supago] 🔍 Fetched 6 orders with status mismatch from DB (login_group_key: g1)
+content.js:1628 [Supago] 🔍 Sample order fields: {order_id: '61f465a2-8249-48ad-9fa9-f5fc033e4967_botauto1', status: 'in_process', gateway_status: 'success', final_action: 'none', username: '5200dxvipin', …}
+content.js:1645 [Supago] 🔍 Checking order: 61f465a2-8249-48ad-9fa9-f5fc033e4967_botauto1, status: in_process, gateway_status: success, final_action: none
+content.js:1656 [Supago] ✅ Order 61f465a2-8249-48ad-9fa9-f5fc033e4967_botauto1 qualifies for processing (status: in_process, gateway_status: success)
+content.js:1645 [Supago] 🔍 Checking order: 6f9fbd30-8216-4f29-8820-d195ea766a73_botauto1, status: in_process, gateway_status: success, final_action: none
+content.js:1656 [Supago] ✅ Order 6f9fbd30-8216-4f29-8820-d195ea766a73_botauto1 qualifies for processing (status: in_process, gateway_status: success)
+content.js:1645 [Supago] 🔍 Checking order: fca6b44f-3009-4770-9f2d-cc1e33d10640_botauto1, status: in_process, gateway_status: success, final_action: none
+content.js:1656 [Supago] ✅ Order fca6b44f-3009-4770-9f2d-cc1e33d10640_botauto1 qualifies for processing (status: in_process, gateway_status: success)
+content.js:1645 [Supago] 🔍 Checking order: f3962802-df7a-4a08-8f28-3b666fed7251_botauto1, status: in_process, gateway_status: success, final_action: none
+content.js:1656 [Supago] ✅ Order f3962802-df7a-4a08-8f28-3b666fed7251_botauto1 qualifies for processing (status: in_process, gateway_status: success)
+content.js:1645 [Supago] 🔍 Checking order: 9ad9c8ad-c0cd-43a4-baae-fb8805565900_botauto1, status: in_process, gateway_status: success, final_action: none
+content.js:1656 [Supago] ✅ Order 9ad9c8ad-c0cd-43a4-baae-fb8805565900_botauto1 qualifies for processing (status: in_process, gateway_status: success)
+content.js:1645 [Supago] 🔍 Checking order: 38bfbd7a-5887-42ad-a42c-3252eb31e8dd_botauto1, status: in_process, gateway_status: success, final_action: none
+content.js:1656 [Supago] ✅ Order 38bfbd7a-5887-42ad-a42c-3252eb31e8dd_botauto1 qualifies for processing (status: in_process, gateway_status: success)
+content.js:1663 [Supago] 🔍 Mismatch check result: 6 orders need processing
+content.js:2389 [Supago] ⏭️ Skipping pending processing - mismatch orders exist (will be processed by mismatch poll)
+content.js:58 [Supago] Dashboard path detected in URL
+content.js:1614 [Supago] 🔍 Mismatch check: login_group_key=g1
+content.js:1624 [Supago] 🔍 Mismatch API response: {orders: Array(6), count: 6}
+content.js:1626 [Supago] 🔍 Fetched 6 orders with status mismatch from DB (login_group_key: g1)
+content.js:1628 [Supago] 🔍 Sample order fields: {order_id: '61f465a2-8249-48ad-9fa9-f5fc033e4967_botauto1', status: 'in_process', gateway_status: 'success', final_action: 'none', username: '5200dxvipin', …}
+content.js:1645 [Supago] 🔍 Checking order: 61f465a2-8249-48ad-9fa9-f5fc033e4967_botauto1, status: in_process, gateway_status: success, final_action: none
+content.js:1656 [Supago] ✅ Order 61f465a2-8249-48ad-9fa9-f5fc033e4967_botauto1 qualifies for processing (status: in_process, gateway_status: success)
+content.js:1645 [Supago] 🔍 Checking order: 6f9fbd30-8216-4f29-8820-d195ea766a73_botauto1, status: in_process, gateway_status: success, final_action: none
+content.js:1656 [Supago] ✅ Order 6f9fbd30-8216-4f29-8820-d195ea766a73_botauto1 qualifies for processing (status: in_process, gateway_status: success)
+content.js:1645 [Supago] 🔍 Checking order: fca6b44f-3009-4770-9f2d-cc1e33d10640_botauto1, status: in_process, gateway_status: success, final_action: none
+content.js:1656 [Supago] ✅ Order fca6b44f-3009-4770-9f2d-cc1e33d10640_botauto1 qualifies for processing (status: in_process, gateway_status: success)
+content.js:1645 [Supago] 🔍 Checking order: f3962802-df7a-4a08-8f28-3b666fed7251_botauto1, status: in_process, gateway_status: success, final_action: none
+content.js:1656 [Supago] ✅ Order f3962802-df7a-4a08-8f28-3b666fed7251_botauto1 qualifies for processing (status: in_process, gateway_status: success)
+content.js:1645 [Supago] 🔍 Checking order: 9ad9c8ad-c0cd-43a4-baae-fb8805565900_botauto1, status: in_process, gateway_status: success, final_action: none
+content.js:1656 [Supago] ✅ Order 9ad9c8ad-c0cd-43a4-baae-fb8805565900_botauto1 qualifies for processing (status: in_process, gateway_status: success)
+content.js:1645 [Supago] 🔍 Checking order: 38bfbd7a-5887-42ad-a42c-3252eb31e8dd_botauto1, status: in_process, gateway_status: success, final_action: none
+content.js:1656 [Supago] ✅ Order 38bfbd7a-5887-42ad-a42c-3252eb31e8dd_botauto1 qualifies for processing (status: in_process, gateway_status: success)
+content.js:1663 [Supago] 🔍 Mismatch check result: 6 orders need processing
+content.js:2389 [Supago] ⏭️ Skipping pending processing - mismatch orders exist (will be processed by mismatch poll)
+content.js:58 [Supago] Dashboard path detected in URL
+content.js:1614 [Supago] 🔍 Mismatch check: login_group_key=g1
+content.js:1624 [Supago] 🔍 Mismatch API response: {orders: Array(6), count: 6}
+content.js:1626 [Supago] 🔍 Fetched 6 orders with status mismatch from DB (login_group_key: g1)
+content.js:1628 [Supago] 🔍 Sample order fields: {order_id: '61f465a2-8249-48ad-9fa9-f5fc033e4967_botauto1', status: 'in_process', gateway_status: 'success', final_action: 'none', username: '5200dxvipin', …}
+content.js:1645 [Supago] 🔍 Checking order: 61f465a2-8249-48ad-9fa9-f5fc033e4967_botauto1, status: in_process, gateway_status: success, final_action: none
+content.js:1656 [Supago] ✅ Order 61f465a2-8249-48ad-9fa9-f5fc033e4967_botauto1 qualifies for processing (status: in_process, gateway_status: success)
+content.js:1645 [Supago] 🔍 Checking order: 6f9fbd30-8216-4f29-8820-d195ea766a73_botauto1, status: in_process, gateway_status: success, final_action: none
+content.js:1656 [Supago] ✅ Order 6f9fbd30-8216-4f29-8820-d195ea766a73_botauto1 qualifies for processing (status: in_process, gateway_status: success)
+content.js:1645 [Supago] 🔍 Checking order: fca6b44f-3009-4770-9f2d-cc1e33d10640_botauto1, status: in_process, gateway_status: success, final_action: none
+content.js:1656 [Supago] ✅ Order fca6b44f-3009-4770-9f2d-cc1e33d10640_botauto1 qualifies for processing (status: in_process, gateway_status: success)
+content.js:1645 [Supago] 🔍 Checking order: f3962802-df7a-4a08-8f28-3b666fed7251_botauto1, status: in_process, gateway_status: success, final_action: none
+content.js:1656 [Supago] ✅ Order f3962802-df7a-4a08-8f28-3b666fed7251_botauto1 qualifies for processing (status: in_process, gateway_status: success)
+content.js:1645 [Supago] 🔍 Checking order: 9ad9c8ad-c0cd-43a4-baae-fb8805565900_botauto1, status: in_process, gateway_status: success, final_action: none
+content.js:1656 [Supago] ✅ Order 9ad9c8ad-c0cd-43a4-baae-fb8805565900_botauto1 qualifies for processing (status: in_process, gateway_status: success)
+content.js:1645 [Supago] 🔍 Checking order: 38bfbd7a-5887-42ad-a42c-3252eb31e8dd_botauto1, status: in_process, gateway_status: success, final_action: none
+content.js:1656 [Supago] ✅ Order 38bfbd7a-5887-42ad-a42c-3252eb31e8dd_botauto1 qualifies for processing (status: in_process, gateway_status: success)
+content.js:1663 [Supago] 🔍 Mismatch check result: 6 orders need processing
+content.js:2389 [Supago] ⏭️ Skipping pending processing - mismatch orders exist (will be processed by mismatch poll)
+content.js:58 [Supago] Dashboard path detected in URL
+content.js:1614 [Supago] 🔍 Mismatch check: login_group_key=g1
+content.js:1624 [Supago] 🔍 Mismatch API response: {orders: Array(6), count: 6}
+content.js:1626 [Supago] 🔍 Fetched 6 orders with status mismatch from DB (login_group_key: g1)
+content.js:1628 [Supago] 🔍 Sample order fields: {order_id: '61f465a2-8249-48ad-9fa9-f5fc033e4967_botauto1', status: 'in_process', gateway_status: 'success', final_action: 'none', username: '5200dxvipin', …}
+content.js:1645 [Supago] 🔍 Checking order: 61f465a2-8249-48ad-9fa9-f5fc033e4967_botauto1, status: in_process, gateway_status: success, final_action: none
+content.js:1656 [Supago] ✅ Order 61f465a2-8249-48ad-9fa9-f5fc033e4967_botauto1 qualifies for processing (status: in_process, gateway_status: success)
+content.js:1645 [Supago] 🔍 Checking order: 6f9fbd30-8216-4f29-8820-d195ea766a73_botauto1, status: in_process, gateway_status: success, final_action: none
+content.js:1656 [Supago] ✅ Order 6f9fbd30-8216-4f29-8820-d195ea766a73_botauto1 qualifies for processing (status: in_process, gateway_status: success)
+content.js:1645 [Supago] 🔍 Checking order: fca6b44f-3009-4770-9f2d-cc1e33d10640_botauto1, status: in_process, gateway_status: success, final_action: none
+content.js:1656 [Supago] ✅ Order fca6b44f-3009-4770-9f2d-cc1e33d10640_botauto1 qualifies for processing (status: in_process, gateway_status: success)
+content.js:1645 [Supago] 🔍 Checking order: f3962802-df7a-4a08-8f28-3b666fed7251_botauto1, status: in_process, gateway_status: success, final_action: none
+content.js:1656 [Supago] ✅ Order f3962802-df7a-4a08-8f28-3b666fed7251_botauto1 qualifies for processing (status: in_process, gateway_status: success)
+content.js:1645 [Supago] 🔍 Checking order: 9ad9c8ad-c0cd-43a4-baae-fb8805565900_botauto1, status: in_process, gateway_status: success, final_action: none
+content.js:1656 [Supago] ✅ Order 9ad9c8ad-c0cd-43a4-baae-fb8805565900_botauto1 qualifies for processing (status: in_process, gateway_status: success)
+content.js:1645 [Supago] 🔍 Checking order: 38bfbd7a-5887-42ad-a42c-3252eb31e8dd_botauto1, status: in_process, gateway_status: success, final_action: none
+content.js:1656 [Supago] ✅ Order 38bfbd7a-5887-42ad-a42c-3252eb31e8dd_botauto1 qualifies for processing (status: in_process, gateway_status: success)
+content.js:1663 [Supago] 🔍 Mismatch check result: 6 orders need processing
+content.js:2389 [Supago] ⏭️ Skipping pending processing - mismatch orders exist (will be processed by mismatch poll)
+content.js:58 [Supago] Dashboard path detected in URL
+content.js:1614 [Supago] 🔍 Mismatch check: login_group_key=g1
+content.js:1624 [Supago] 🔍 Mismatch API response: {orders: Array(6), count: 6}
+content.js:1626 [Supago] 🔍 Fetched 6 orders with status mismatch from DB (login_group_key: g1)
+content.js:1628 [Supago] 🔍 Sample order fields: {order_id: '61f465a2-8249-48ad-9fa9-f5fc033e4967_botauto1', status: 'in_process', gateway_status: 'success', final_action: 'none', username: '5200dxvipin', …}
+content.js:1645 [Supago] 🔍 Checking order: 61f465a2-8249-48ad-9fa9-f5fc033e4967_botauto1, status: in_process, gateway_status: success, final_action: none
+content.js:1656 [Supago] ✅ Order 61f465a2-8249-48ad-9fa9-f5fc033e4967_botauto1 qualifies for processing (status: in_process, gateway_status: success)
+content.js:1645 [Supago] 🔍 Checking order: 6f9fbd30-8216-4f29-8820-d195ea766a73_botauto1, status: in_process, gateway_status: success, final_action: none
+content.js:1656 [Supago] ✅ Order 6f9fbd30-8216-4f29-8820-d195ea766a73_botauto1 qualifies for processing (status: in_process, gateway_status: success)
+content.js:1645 [Supago] 🔍 Checking order: fca6b44f-3009-4770-9f2d-cc1e33d10640_botauto1, status: in_process, gateway_status: success, final_action: none
+content.js:1656 [Supago] ✅ Order fca6b44f-3009-4770-9f2d-cc1e33d10640_botauto1 qualifies for processing (status: in_process, gateway_status: success)
+content.js:1645 [Supago] 🔍 Checking order: f3962802-df7a-4a08-8f28-3b666fed7251_botauto1, status: in_process, gateway_status: success, final_action: none
+content.js:1656 [Supago] ✅ Order f3962802-df7a-4a08-8f28-3b666fed7251_botauto1 qualifies for processing (status: in_process, gateway_status: success)
+content.js:1645 [Supago] 🔍 Checking order: 9ad9c8ad-c0cd-43a4-baae-fb8805565900_botauto1, status: in_process, gateway_status: success, final_action: none
+content.js:1656 [Supago] ✅ Order 9ad9c8ad-c0cd-43a4-baae-fb8805565900_botauto1 qualifies for processing (status: in_process, gateway_status: success)
+content.js:1645 [Supago] 🔍 Checking order: 38bfbd7a-5887-42ad-a42c-3252eb31e8dd_botauto1, status: in_process, gateway_status: success, final_action: none
+content.js:1656 [Supago] ✅ Order 38bfbd7a-5887-42ad-a42c-3252eb31e8dd_botauto1 qualifies for processing (status: in_process, gateway_status: success)
+content.js:1663 [Supago] 🔍 Mismatch check result: 6 orders need processing
+content.js:2389 [Supago] ⏭️ Skipping pending processing - mismatch orders exist (will be processed by mismatch poll)
+content.js:58 [Supago] Dashboard path detected in URL
+content.js:1614 [Supago] 🔍 Mismatch check: login_group_key=g1
+content.js:1624 [Supago] 🔍 Mismatch API response: {orders: Array(6), count: 6}
+content.js:1626 [Supago] 🔍 Fetched 6 orders with status mismatch from DB (login_group_key: g1)
+content.js:1628 [Supago] 🔍 Sample order fields: {order_id: '61f465a2-8249-48ad-9fa9-f5fc033e4967_botauto1', status: 'in_process', gateway_status: 'success', final_action: 'none', username: '5200dxvipin', …}
+content.js:1645 [Supago] 🔍 Checking order: 61f465a2-8249-48ad-9fa9-f5fc033e4967_botauto1, status: in_process, gateway_status: success, final_action: none
+content.js:1656 [Supago] ✅ Order 61f465a2-8249-48ad-9fa9-f5fc033e4967_botauto1 qualifies for processing (status: in_process, gateway_status: success)
+content.js:1645 [Supago] 🔍 Checking order: 6f9fbd30-8216-4f29-8820-d195ea766a73_botauto1, status: in_process, gateway_status: success, final_action: none
+content.js:1656 [Supago] ✅ Order 6f9fbd30-8216-4f29-8820-d195ea766a73_botauto1 qualifies for processing (status: in_process, gateway_status: success)
+content.js:1645 [Supago] 🔍 Checking order: fca6b44f-3009-4770-9f2d-cc1e33d10640_botauto1, status: in_process, gateway_status: success, final_action: none
+content.js:1656 [Supago] ✅ Order fca6b44f-3009-4770-9f2d-cc1e33d10640_botauto1 qualifies for processing (status: in_process, gateway_status: success)
+content.js:1645 [Supago] 🔍 Checking order: f3962802-df7a-4a08-8f28-3b666fed7251_botauto1, status: in_process, gateway_status: success, final_action: none
+content.js:1656 [Supago] ✅ Order f3962802-df7a-4a08-8f28-3b666fed7251_botauto1 qualifies for processing (status: in_process, gateway_status: success)
+content.js:1645 [Supago] 🔍 Checking order: 9ad9c8ad-c0cd-43a4-baae-fb8805565900_botauto1, status: in_process, gateway_status: success, final_action: none
+content.js:1656 [Supago] ✅ Order 9ad9c8ad-c0cd-43a4-baae-fb8805565900_botauto1 qualifies for processing (status: in_process, gateway_status: success)
+content.js:1645 [Supago] 🔍 Checking order: 38bfbd7a-5887-42ad-a42c-3252eb31e8dd_botauto1, status: in_process, gateway_status: success, final_action: none
+content.js:1656 [Supago] ✅ Order 38bfbd7a-5887-42ad-a42c-3252eb31e8dd_botauto1 qualifies for processing (status: in_process, gateway_status: success)
+content.js:1663 [Supago] 🔍 Mismatch check result: 6 orders need processing
+content.js:2389 [Supago] ⏭️ Skipping pending processing - mismatch orders exist (will be processed by mismatch poll)
+content.js:58 [Supago] Dashboard path detected in URL
+content.js:1614 [Supago] 🔍 Mismatch check: login_group_key=g1
+content.js:1624 [Supago] 🔍 Mismatch API response: {orders: Array(6), count: 6}
+content.js:1626 [Supago] 🔍 Fetched 6 orders with status mismatch from DB (login_group_key: g1)
+content.js:1628 [Supago] 🔍 Sample order fields: {order_id: '61f465a2-8249-48ad-9fa9-f5fc033e4967_botauto1', status: 'in_process', gateway_status: 'success', final_action: 'none', username: '5200dxvipin', …}
+content.js:1645 [Supago] 🔍 Checking order: 61f465a2-8249-48ad-9fa9-f5fc033e4967_botauto1, status: in_process, gateway_status: success, final_action: none
+content.js:1656 [Supago] ✅ Order 61f465a2-8249-48ad-9fa9-f5fc033e4967_botauto1 qualifies for processing (status: in_process, gateway_status: success)
+content.js:1645 [Supago] 🔍 Checking order: 6f9fbd30-8216-4f29-8820-d195ea766a73_botauto1, status: in_process, gateway_status: success, final_action: none
+content.js:1656 [Supago] ✅ Order 6f9fbd30-8216-4f29-8820-d195ea766a73_botauto1 qualifies for processing (status: in_process, gateway_status: success)
+content.js:1645 [Supago] 🔍 Checking order: fca6b44f-3009-4770-9f2d-cc1e33d10640_botauto1, status: in_process, gateway_status: success, final_action: none
+content.js:1656 [Supago] ✅ Order fca6b44f-3009-4770-9f2d-cc1e33d10640_botauto1 qualifies for processing (status: in_process, gateway_status: success)
+content.js:1645 [Supago] 🔍 Checking order: f3962802-df7a-4a08-8f28-3b666fed7251_botauto1, status: in_process, gateway_status: success, final_action: none
+content.js:1656 [Supago] ✅ Order f3962802-df7a-4a08-8f28-3b666fed7251_botauto1 qualifies for processing (status: in_process, gateway_status: success)
+content.js:1645 [Supago] 🔍 Checking order: 9ad9c8ad-c0cd-43a4-baae-fb8805565900_botauto1, status: in_process, gateway_status: success, final_action: none
+content.js:1656 [Supago] ✅ Order 9ad9c8ad-c0cd-43a4-baae-fb8805565900_botauto1 qualifies for processing (status: in_process, gateway_status: success)
+content.js:1645 [Supago] 🔍 Checking order: 38bfbd7a-5887-42ad-a42c-3252eb31e8dd_botauto1, status: in_process, gateway_status: success, final_action: none
+content.js:1656 [Supago] ✅ Order 38bfbd7a-5887-42ad-a42c-3252eb31e8dd_botauto1 qualifies for processing (status: in_process, gateway_status: success)
+content.js:1663 [Supago] 🔍 Mismatch check result: 6 orders need processing
+content.js:2389 [Supago] ⏭️ Skipping pending processing - mismatch orders exist (will be processed by mismatch poll)
+content.js:58 [Supago] Dashboard path detected in URL
+content.js:1614 [Supago] 🔍 Mismatch check: login_group_key=g1
+content.js:1624 [Supago] 🔍 Mismatch API response: {orders: Array(6), count: 6}
+content.js:1626 [Supago] 🔍 Fetched 6 orders with status mismatch from DB (login_group_key: g1)
+content.js:1628 [Supago] 🔍 Sample order fields: {order_id: '61f465a2-8249-48ad-9fa9-f5fc033e4967_botauto1', status: 'in_process', gateway_status: 'success', final_action: 'none', username: '5200dxvipin', …}
+content.js:1645 [Supago] 🔍 Checking order: 61f465a2-8249-48ad-9fa9-f5fc033e4967_botauto1, status: in_process, gateway_status: success, final_action: none
+content.js:1656 [Supago] ✅ Order 61f465a2-8249-48ad-9fa9-f5fc033e4967_botauto1 qualifies for processing (status: in_process, gateway_status: success)
+content.js:1645 [Supago] 🔍 Checking order: 6f9fbd30-8216-4f29-8820-d195ea766a73_botauto1, status: in_process, gateway_status: success, final_action: none
+content.js:1656 [Supago] ✅ Order 6f9fbd30-8216-4f29-8820-d195ea766a73_botauto1 qualifies for processing (status: in_process, gateway_status: success)
+content.js:1645 [Supago] 🔍 Checking order: fca6b44f-3009-4770-9f2d-cc1e33d10640_botauto1, status: in_process, gateway_status: success, final_action: none
+content.js:1656 [Supago] ✅ Order fca6b44f-3009-4770-9f2d-cc1e33d10640_botauto1 qualifies for processing (status: in_process, gateway_status: success)
+content.js:1645 [Supago] 🔍 Checking order: f3962802-df7a-4a08-8f28-3b666fed7251_botauto1, status: in_process, gateway_status: success, final_action: none
+content.js:1656 [Supago] ✅ Order f3962802-df7a-4a08-8f28-3b666fed7251_botauto1 qualifies for processing (status: in_process, gateway_status: success)
+content.js:1645 [Supago] 🔍 Checking order: 9ad9c8ad-c0cd-43a4-baae-fb8805565900_botauto1, status: in_process, gateway_status: success, final_action: none
+content.js:1656 [Supago] ✅ Order 9ad9c8ad-c0cd-43a4-baae-fb8805565900_botauto1 qualifies for processing (status: in_process, gateway_status: success)
+content.js:1645 [Supago] 🔍 Checking order: 38bfbd7a-5887-42ad-a42c-3252eb31e8dd_botauto1, status: in_process, gateway_status: success, final_action: none
+content.js:1656 [Supago] ✅ Order 38bfbd7a-5887-42ad-a42c-3252eb31e8dd_botauto1 qualifies for processing (status: in_process, gateway_status: success)
+content.js:1663 [Supago] 🔍 Mismatch check result: 6 orders need processing
+content.js:2389 [Supago] ⏭️ Skipping pending processing - mismatch orders exist (will be processed by mismatch poll)
+content.js:58 [Supago] Dashboard path detected in URL
+content.js:1614 [Supago] 🔍 Mismatch check: login_group_key=g1
+content.js:1624 [Supago] 🔍 Mismatch API response: {orders: Array(6), count: 6}
+content.js:1626 [Supago] 🔍 Fetched 6 orders with status mismatch from DB (login_group_key: g1)
+content.js:1628 [Supago] 🔍 Sample order fields: {order_id: '61f465a2-8249-48ad-9fa9-f5fc033e4967_botauto1', status: 'in_process', gateway_status: 'success', final_action: 'none', username: '5200dxvipin', …}
+content.js:1645 [Supago] 🔍 Checking order: 61f465a2-8249-48ad-9fa9-f5fc033e4967_botauto1, status: in_process, gateway_status: success, final_action: none
+content.js:1656 [Supago] ✅ Order 61f465a2-8249-48ad-9fa9-f5fc033e4967_botauto1 qualifies for processing (status: in_process, gateway_status: success)
+content.js:1645 [Supago] 🔍 Checking order: 6f9fbd30-8216-4f29-8820-d195ea766a73_botauto1, status: in_process, gateway_status: success, final_action: none
+content.js:1656 [Supago] ✅ Order 6f9fbd30-8216-4f29-8820-d195ea766a73_botauto1 qualifies for processing (status: in_process, gateway_status: success)
+content.js:1645 [Supago] 🔍 Checking order: fca6b44f-3009-4770-9f2d-cc1e33d10640_botauto1, status: in_process, gateway_status: success, final_action: none
+content.js:1656 [Supago] ✅ Order fca6b44f-3009-4770-9f2d-cc1e33d10640_botauto1 qualifies for processing (status: in_process, gateway_status: success)
+content.js:1645 [Supago] 🔍 Checking order: f3962802-df7a-4a08-8f28-3b666fed7251_botauto1, status: in_process, gateway_status: success, final_action: none
+content.js:1656 [Supago] ✅ Order f3962802-df7a-4a08-8f28-3b666fed7251_botauto1 qualifies for processing (status: in_process, gateway_status: success)
+content.js:1645 [Supago] 🔍 Checking order: 9ad9c8ad-c0cd-43a4-baae-fb8805565900_botauto1, status: in_process, gateway_status: success, final_action: none
+content.js:1656 [Supago] ✅ Order 9ad9c8ad-c0cd-43a4-baae-fb8805565900_botauto1 qualifies for processing (status: in_process, gateway_status: success)
+content.js:1645 [Supago] 🔍 Checking order: 38bfbd7a-5887-42ad-a42c-3252eb31e8dd_botauto1, status: in_process, gateway_status: success, final_action: none
+content.js:1656 [Supago] ✅ Order 38bfbd7a-5887-42ad-a42c-3252eb31e8dd_botauto1 qualifies for processing (status: in_process, gateway_status: success)
+content.js:1663 [Supago] 🔍 Mismatch check result: 6 orders need processing
+content.js:2389 [Supago] ⏭️ Skipping pending processing - mismatch orders exist (will be processed by mismatch poll)
+content.js:58 [Supago] Dashboard path detected in URL
+content.js:1614 [Supago] 🔍 Mismatch check: login_group_key=g1
+content.js:1624 [Supago] 🔍 Mismatch API response: {orders: Array(6), count: 6}
+content.js:1626 [Supago] 🔍 Fetched 6 orders with status mismatch from DB (login_group_key: g1)
+content.js:1628 [Supago] 🔍 Sample order fields: {order_id: '61f465a2-8249-48ad-9fa9-f5fc033e4967_botauto1', status: 'in_process', gateway_status: 'success', final_action: 'none', username: '5200dxvipin', …}
+content.js:1645 [Supago] 🔍 Checking order: 61f465a2-8249-48ad-9fa9-f5fc033e4967_botauto1, status: in_process, gateway_status: success, final_action: none
+content.js:1656 [Supago] ✅ Order 61f465a2-8249-48ad-9fa9-f5fc033e4967_botauto1 qualifies for processing (status: in_process, gateway_status: success)
+content.js:1645 [Supago] 🔍 Checking order: 6f9fbd30-8216-4f29-8820-d195ea766a73_botauto1, status: in_process, gateway_status: success, final_action: none
+content.js:1656 [Supago] ✅ Order 6f9fbd30-8216-4f29-8820-d195ea766a73_botauto1 qualifies for processing (status: in_process, gateway_status: success)
+content.js:1645 [Supago] 🔍 Checking order: fca6b44f-3009-4770-9f2d-cc1e33d10640_botauto1, status: in_process, gateway_status: success, final_action: none
+content.js:1656 [Supago] ✅ Order fca6b44f-3009-4770-9f2d-cc1e33d10640_botauto1 qualifies for processing (status: in_process, gateway_status: success)
+content.js:1645 [Supago] 🔍 Checking order: f3962802-df7a-4a08-8f28-3b666fed7251_botauto1, status: in_process, gateway_status: success, final_action: none
+content.js:1656 [Supago] ✅ Order f3962802-df7a-4a08-8f28-3b666fed7251_botauto1 qualifies for processing (status: in_process, gateway_status: success)
+content.js:1645 [Supago] 🔍 Checking order: 9ad9c8ad-c0cd-43a4-baae-fb8805565900_botauto1, status: in_process, gateway_status: success, final_action: none
+content.js:1656 [Supago] ✅ Order 9ad9c8ad-c0cd-43a4-baae-fb8805565900_botauto1 qualifies for processing (status: in_process, gateway_status: success)
+content.js:1645 [Supago] 🔍 Checking order: 38bfbd7a-5887-42ad-a42c-3252eb31e8dd_botauto1, status: in_process, gateway_status: success, final_action: none
+content.js:1656 [Supago] ✅ Order 38bfbd7a-5887-42ad-a42c-3252eb31e8dd_botauto1 qualifies for processing (status: in_process, gateway_status: success)
+content.js:1663 [Supago] 🔍 Mismatch check result: 6 orders need processing
+content.js:2389 [Supago] ⏭️ Skipping pending processing - mismatch orders exist (will be processed by mismatch poll)
+content.js:58 [Supago] Dashboard path detected in URL
+content.js:1614 [Supago] 🔍 Mismatch check: login_group_key=g1
+content.js:1624 [Supago] 🔍 Mismatch API response: {orders: Array(6), count: 6}
+content.js:1626 [Supago] 🔍 Fetched 6 orders with status mismatch from DB (login_group_key: g1)
+content.js:1628 [Supago] 🔍 Sample order fields: {order_id: '61f465a2-8249-48ad-9fa9-f5fc033e4967_botauto1', status: 'in_process', gateway_status: 'success', final_action: 'none', username: '5200dxvipin', …}
+content.js:1645 [Supago] 🔍 Checking order: 61f465a2-8249-48ad-9fa9-f5fc033e4967_botauto1, status: in_process, gateway_status: success, final_action: none
+content.js:1656 [Supago] ✅ Order 61f465a2-8249-48ad-9fa9-f5fc033e4967_botauto1 qualifies for processing (status: in_process, gateway_status: success)
+content.js:1645 [Supago] 🔍 Checking order: 6f9fbd30-8216-4f29-8820-d195ea766a73_botauto1, status: in_process, gateway_status: success, final_action: none
+content.js:1656 [Supago] ✅ Order 6f9fbd30-8216-4f29-8820-d195ea766a73_botauto1 qualifies for processing (status: in_process, gateway_status: success)
+content.js:1645 [Supago] 🔍 Checking order: fca6b44f-3009-4770-9f2d-cc1e33d10640_botauto1, status: in_process, gateway_status: success, final_action: none
+content.js:1656 [Supago] ✅ Order fca6b44f-3009-4770-9f2d-cc1e33d10640_botauto1 qualifies for processing (status: in_process, gateway_status: success)
+content.js:1645 [Supago] 🔍 Checking order: f3962802-df7a-4a08-8f28-3b666fed7251_botauto1, status: in_process, gateway_status: success, final_action: none
+content.js:1656 [Supago] ✅ Order f3962802-df7a-4a08-8f28-3b666fed7251_botauto1 qualifies for processing (status: in_process, gateway_status: success)
+content.js:1645 [Supago] 🔍 Checking order: 9ad9c8ad-c0cd-43a4-baae-fb8805565900_botauto1, status: in_process, gateway_status: success, final_action: none
+content.js:1656 [Supago] ✅ Order 9ad9c8ad-c0cd-43a4-baae-fb8805565900_botauto1 qualifies for processing (status: in_process, gateway_status: success)
+content.js:1645 [Supago] 🔍 Checking order: 38bfbd7a-5887-42ad-a42c-3252eb31e8dd_botauto1, status: in_process, gateway_status: success, final_action: none
+content.js:1656 [Supago] ✅ Order 38bfbd7a-5887-42ad-a42c-3252eb31e8dd_botauto1 qualifies for processing (status: in_process, gateway_status: success)
+content.js:1663 [Supago] 🔍 Mismatch check result: 6 orders need processing
+content.js:2389 [Supago] ⏭️ Skipping pending processing - mismatch orders exist (will be processed by mismatch poll)

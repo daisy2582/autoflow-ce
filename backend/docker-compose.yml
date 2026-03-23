@@ -1,0 +1,64 @@
+services:
+  backend:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: autoflow-ce-backend
+    ports:
+      - "3000:3000"
+    environment:
+      # Docker indicator (for server.js to detect Docker environment)
+      DOCKER_CONTAINER: "true"
+      # Connect to shared Autoflow DB (running on host at localhost:5433)
+      # On macOS, use host.docker.internal so the container can reach host Postgres
+      DB_HOST: host.docker.internal
+      DB_PORT: ${DB_PORT:-5433}
+      DB_USER: ${DB_USER:-postgres}
+      DB_PASSWORD: ${DB_PASSWORD:-postgres}
+      DB_NAME: ${DB_NAME:-supago_bot}
+      PORT: 3000
+      NODE_ENV: ${NODE_ENV:-production}
+      # GatewayHub API keys (if needed)
+      GATEWAYHUB_WINFIX_PUBLIC_KEY: ${GATEWAYHUB_WINFIX_PUBLIC_KEY:-}
+      GATEWAYHUB_WINFIX_PRIVATE_KEY: ${GATEWAYHUB_WINFIX_PRIVATE_KEY:-}
+      GATEWAYHUB_AUTOEXCHANGE_PUBLIC_KEY: ${GATEWAYHUB_AUTOEXCHANGE_PUBLIC_KEY:-}
+      GATEWAYHUB_AUTOEXCHANGE_PRIVATE_KEY: ${GATEWAYHUB_AUTOEXCHANGE_PRIVATE_KEY:-}
+    restart: unless-stopped
+    # Optional: If you want to use .env file, mount it
+    # volumes:
+    #   - ./.env:/usr/src/app/.env:ro
+    healthcheck:
+      # Use curl (installed in Dockerfile) instead of wget
+      test: ["CMD", "curl", "-f", "http://localhost:3000/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 10s
+
+  # NOTE: We don't need a separate Postgres service here because:
+  # - CE backend connects to the shared Autoflow DB (supago_bot on localhost:5433)
+  # - That DB is managed by auto-flow/docker-compose.yml
+  # - If you need a standalone Postgres for testing, uncomment below:
+  #
+  # postgres:
+  #   image: postgres:15-alpine
+  #   container_name: supago-postgres-ce
+  #   environment:
+  #     POSTGRES_USER: postgres
+  #     POSTGRES_PASSWORD: postgres
+  #     POSTGRES_DB: supago_bot
+  #   ports:
+  #     - "5434:5432"
+  #   volumes:
+  #     - postgres_data:/var/lib/postgresql/data
+  #     - ./init.sql:/docker-entrypoint-initdb.d/init.sql
+  #   restart: unless-stopped
+  #   healthcheck:
+  #     test: [ "CMD-SHELL", "pg_isready -U postgres -d supago_bot" ]
+  #     interval: 10s
+  #     timeout: 5s
+  #     retries: 5
+
+# volumes:
+#   postgres_data:
+#     driver: local

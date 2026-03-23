@@ -1,0 +1,108 @@
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: autoflow-ce
+  labels:
+    app: autoflow-ce
+spec:
+  selector:
+    matchLabels:
+      app: autoflow-ce
+  template:
+    metadata:
+      labels:
+        app: autoflow-ce
+    spec:
+      containers:
+        - name: autoflow-ce
+          image: 900278004921.dkr.ecr.ap-southeast-1.amazonaws.com/autoflow-ce/autoflow-ce:2029d13167315d7de3d39b2964d9c3c0f96e2d7f
+          ports:
+            - containerPort: 3000
+          resources:
+            requests:
+              cpu: "100m"
+              memory: "256Mi"
+            limits:
+              cpu: "500m"
+              memory: "512Mi"
+          envFrom:
+            - configMapRef:
+                name: autoflow-ce-config
+
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: autoflow-ce
+  labels:
+    app: autoflow-ce
+spec:
+  type: NodePort  # Use LoadBalancer if you want public access
+  ports:
+    - port: 3000
+      targetPort: 3000
+  selector:
+    app: autoflow-ce
+
+---
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: autoflow-ce-ingress-alb-ingress
+  annotations:
+    # Use the AWS Load Balancer Controller
+    alb.ingress.kubernetes.io/scheme: internet-facing
+    alb.ingress.kubernetes.io/target-type: ip
+    # Grouping allows you to add more services to this same ALB later
+    alb.ingress.kubernetes.io/group.name: "common-group"
+    # SSL Configuration (Replace with your ACM ARN)
+    alb.ingress.kubernetes.io/certificate-arn: arn:aws:acm:ap-southeast-1:900278004921:certificate/25e96906-8e7d-497b-8d4e-60378e607bba
+    alb.ingress.kubernetes.io/listen-ports: '[{"HTTP": 80}, {"HTTPS": 443}]'
+    alb.ingress.kubernetes.io/ssl-redirect: '443'
+    alb.ingress.kubernetes.io/healthcheck-path: /health  # Ensure this returns a 200
+    alb.ingress.kubernetes.io/healthcheck-port: traffic-port
+    alb.ingress.kubernetes.io/success-codes: '200'
+spec:
+  ingressClassName: alb
+  rules:
+    - host:  autoflow-ce-api.botauto.online
+      http:
+        paths:
+          - path: /
+            pathType: Prefix
+            backend:
+              service:
+                name: autoflow-ce
+                port:
+                  number: 3000                
+
+---
+apiVersion: autoscaling/v2
+kind: HorizontalPodAutoscaler
+metadata:
+  name: autoflow-ce-hpa
+  namespace: autoflow
+spec:
+  scaleTargetRef:
+    apiVersion: apps/v1
+    kind: Deployment
+    name: autoflow-ce
+  minReplicas: 3
+  maxReplicas: 10
+  metrics:
+  - type: Resource
+    resource:
+      name: cpu
+      target:
+        type: Utilization
+        averageUtilization: 75
+  - type: Resource
+    resource:
+      name: memory
+      target:
+        type: Utilization
+        averageUtilization: 75 
+
+
+
