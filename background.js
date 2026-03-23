@@ -23,9 +23,7 @@ async function openSupagoMiniWindow() {
         url: SUPAGO_URL,
         type: 'normal',
         width: MIN_WIN_WIDTH,
-        height: MIN_WIN_HEIGHT,
-        left: screen.availWidth - MIN_WIN_WIDTH - 10,
-        top: screen.availHeight - MIN_WIN_HEIGHT - 50
+        height: MIN_WIN_HEIGHT
     });
     console.log('[Supago Background] Opened mini Supago window:', newWindow.id);
 }

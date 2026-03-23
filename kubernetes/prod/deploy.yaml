@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
         - name: autoflow-ce
-          image: 900278004921.dkr.ecr.ap-southeast-1.amazonaws.com/autoflow-ce/autoflow-ce:2029d13167315d7de3d39b2964d9c3c0f96e2d7f
+          image: 900278004921.dkr.ecr.ap-southeast-1.amazonaws.com/autoflow-ce/autoflow-ce:f1c7968f884c21b56e03a4431aed1178fd4ff81f
           ports:
             - containerPort: 3000
           resources:

@@ -8,6 +8,52 @@
 let isProcessing = false;
 let refreshTimer = null;
 let loginPollTimer = null;
+
+/**
+ * Inject a colored banner at the top of the page showing username + SUPAGO label.
+ * Also updates the tab title so you can identify windows at a glance.
+ */
+async function injectIdentityBanner() {
+    try {
+        const encryptedCreds = await getCredentials();
+        if (!encryptedCreds) return;
+        const username = await decryptText(encryptedCreds.username, 'supago-extension-key');
+        if (!username) return;
+
+        const settings = await getSettings();
+        const website = settings.websiteName || 'WINFIX';
+
+        // Set tab title
+        document.title = `SUPAGO | ${username} | ${website}`;
+
+        // Don't inject twice
+        if (document.getElementById('supago-ce-banner')) return;
+
+        const banner = document.createElement('div');
+        banner.id = 'supago-ce-banner';
+        banner.innerHTML = `<span style="font-size:13px;font-weight:700;letter-spacing:1px;">SUPAGO</span>` +
+            `<span style="margin:0 10px;opacity:0.5;">|</span>` +
+            `<span style="font-size:14px;font-weight:600;">${username}</span>` +
+            `<span style="margin:0 10px;opacity:0.5;">|</span>` +
+            `<span style="font-size:12px;background:rgba(255,255,255,0.2);padding:2px 8px;border-radius:4px;">${website}</span>`;
+        banner.style.cssText = 'position:fixed;top:0;left:0;right:0;z-index:999999;' +
+            'background:linear-gradient(135deg,#1e40af,#7c3aed);color:#fff;' +
+            'padding:6px 16px;display:flex;align-items:center;justify-content:center;' +
+            'font-family:system-ui,sans-serif;box-shadow:0 2px 8px rgba(0,0,0,0.3);';
+
+        document.body.prepend(banner);
+
+        // Push page content down so banner doesn't overlap
+        document.body.style.marginTop = (banner.offsetHeight) + 'px';
+
+        console.log(`[Supago] Banner injected: ${username} | ${website}`);
+    } catch (e) {
+        console.warn('[Supago] Could not inject identity banner:', e.message);
+    }
+}
+
+// Inject banner as soon as page is ready
+injectIdentityBanner();
 let mismatchPollTimer = null;
 let pendingPollTimer = null;
 
