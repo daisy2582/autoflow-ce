@@ -2242,12 +2242,12 @@ async function runAutomation() {
         const automationMode = settings.automationMode || 'both';
         console.log(`[Supago] Automation mode: ${automationMode}`);
 
-        // Phase 2: Navigate to Manual Withdrawal Requests (only if pending phase is needed)
-        // For 'in_process' mode, navigation happens later in Phase 4
+        // Phase 2: Navigate to Manual Withdrawal Requests
+        // Always navigate to withdraw-request page after login so CE is on the right page
         const needsPendingPhase = (automationMode === 'pending' || automationMode === 'both') && settings.ceCanProcessPending;
         const needsInProcessPhase = (automationMode === 'in_process' || automationMode === 'both') && settings.ceCanProcessInProcess;
-        
-        if (needsPendingPhase) {
+
+        if (needsPendingPhase || needsInProcessPhase) {
         const navSuccess = await navigateToWithdrawalRequests();
         
         // Verify we're still logged in after navigation (check for login redirect)
