@@ -5,8 +5,8 @@ console.log('[Supago Background] Service worker initialized');
 
 // Auto-open Supago in smallest possible window
 const SUPAGO_URL = 'https://dashboard.supago.online/';
-const MIN_WIN_WIDTH = 300;
-const MIN_WIN_HEIGHT = 300;
+const MIN_WIN_WIDTH = 100;
+const MIN_WIN_HEIGHT = 100;
 
 async function openSupagoMiniWindow() {
     const existingTabs = await chrome.tabs.query({ url: 'https://dashboard.supago.online/*' });
