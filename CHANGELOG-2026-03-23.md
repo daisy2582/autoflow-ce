@@ -1,6 +1,6 @@
 # Release Notes — 2026-03-23
 
-## AF-101: Update Supago Dashboard URL
+## AUT-101: Update Supago Dashboard URL
 **Type:** Task | **Priority:** High | **Component:** Backend, CE, Cookie-Sync | **Assignee:** daisy2582
 
 Migrated all Supago URL references from `https://supago.services777.com` to `https://dashboard.supago.online/` across the entire stack.
@@ -13,7 +13,7 @@ Migrated all Supago URL references from `https://supago.services777.com` to `htt
 
 ---
 
-## AF-102: Auto-Open Mini Supago Window on Extension Start
+## AUT-102: Auto-Open Mini Supago Window on Extension Start
 **Type:** Feature | **Priority:** Medium | **Component:** CE | **Assignee:** daisy2582
 
 Chrome Extension now automatically opens the Supago dashboard in a minimal-size browser window (100x100) when the extension is installed, updated, or the browser starts. If a Supago tab already exists, it resizes the existing window instead of creating a new one.
@@ -24,7 +24,7 @@ Chrome Extension now automatically opens the Supago dashboard in a minimal-size 
 
 ---
 
-## AF-103: Identity Banner with Username and Website Label
+## AUT-103: Identity Banner with Username and Website Label
 **Type:** Feature | **Priority:** Medium | **Component:** CE | **Assignee:** daisy2582
 
 Injected a fixed colored banner at the top of the Supago page displaying the logged-in username and website name (e.g., `SUPAGO | botauto1 | AUTOEXCHANGE`). Tab title is also updated for easy identification when multiple CE windows are open.
@@ -34,7 +34,7 @@ Injected a fixed colored banner at the top of the Supago page displaying the log
 
 ---
 
-## AF-104: Navigate to Withdraw-Request Page for In-Process Only Logins
+## AUT-104: Navigate to Withdraw-Request Page for In-Process Only Logins
 **Type:** Improvement | **Priority:** High | **Component:** CE | **Assignee:** daisy2582
 
 Previously, the CE only navigated to the `/withdraw-request` page when the pending phase was needed. Logins configured with `handles_pending=false, handles_in_process=true` would never navigate to the withdrawal page, preventing mismatch order processing. Now navigation occurs whenever either pending or in-process phase is active.
@@ -44,7 +44,7 @@ Previously, the CE only navigated to the `/withdraw-request` page when the pendi
 
 ---
 
-## AF-105: Webhook Queue Infinite Retry Loop Prevention
+## AUT-105: Webhook Queue Infinite Retry Loop Prevention
 **Type:** Improvement | **Priority:** Critical | **Component:** Backend | **Assignee:** daisy2582
 
 Webhook queue processing had an infinite retry loop: failed webhooks were re-queued via `rpush`, then immediately popped again by the `while True` loop, causing hundreds of retries per second when login was rate-limited.
@@ -59,7 +59,7 @@ Webhook queue processing had an infinite retry loop: failed webhooks were re-que
 
 ---
 
-## AF-106: Skip Login Attempts When Rate-Limited
+## AUT-106: Skip Login Attempts When Rate-Limited
 **Type:** Improvement | **Priority:** High | **Component:** Backend | **Assignee:** daisy2582
 
 When a login was rate-limited, the pending processor still attempted 3 login tries + 3 browser context resets every 10 seconds, all of which immediately hit the rate limit. Now it checks rate-limit status before entering the retry loop and skips immediately.
@@ -70,7 +70,7 @@ When a login was rate-limited, the pending processor still attempted 3 login tri
 
 ---
 
-## AF-107: Post-Login Stabilization Wait
+## AUT-107: Post-Login Stabilization Wait
 **Type:** Improvement | **Priority:** Medium | **Component:** Backend | **Assignee:** daisy2582
 
 Added a 10-second wait after successful login in both the pending processor and webhook processor. This allows the Supago page to fully settle (React rendering, session cookies, redirects) before the bot attempts any scraping or button clicks.
